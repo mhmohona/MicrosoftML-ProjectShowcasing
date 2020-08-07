@@ -1,7 +1,9 @@
-# Microsoft ML-Scholarship-Project-Showcasing-Challenge
-A repository to keep all open sources projects that created by individuals or study groups of Microsoft ML Scholarship
+# Microsoft Azure Machine Learning Scholarship Project Showcasing Challenge
+
+A platform to keep and showcase all the open sources projects that are implemented from individual or study groups of Microsoft Azure Machine Learning Scholarship from Udacity.
 
 # Guidelines:
+
 Please structure your submission using the following steps:
 - Create a directory with your **slack username** in the project folder
 - Structure your code into one or more Python modules in that directory
