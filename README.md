@@ -13,3 +13,19 @@ Please structure your submission using the following steps:
   - The notebooks should be well-documented. Ideally, each code cell should be preceded by a Markdown cell describing why you have included the code cell. It can also include comments on the output generated, eg. describing features of a graph. These text cells should be more high-level than actual code comments, describing the narrative or thought process behind your steps.
   
   
+# Timeline: 
+**Start date:** 10 August 2020, 00.01am UTC
+**End date:** 1 September 2020 11.59pm UTC
+
+
+# Categories:
+
+- Supervised Machine Learning
+- Unsupervised Machine Learning
+- Reinforcement Machine Learning
+- Others
+
+  
+  
+  
+  *Participation is not mandatory for scholars.*
