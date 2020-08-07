@@ -24,12 +24,11 @@ Please structure your submission using the following steps:
 
 # Categories:
 
-- Supervised Machine Learning 
-- Unsupervised Machine Learning
-- Reinforcement Machine Learning
-- Others
+- Supervised Machine Learning <br />
+- Unsupervised Machine Learning <br />
+- Reinforcement Machine Learning <br />
+- Others  <br />
 
   
-  
-  
-  *Participation is not mandatory for scholars.*
+
+> Participation is not mandatory for scholars.
