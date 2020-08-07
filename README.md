@@ -1,3 +1,7 @@
+
+
+![challenge](/image/challenge.jpg)
+
 # Microsoft Azure Machine Learning Scholarship Project Showcasing Challenge
 
 A platform to keep and showcase all the open sources projects that are implemented from individual or study groups of Microsoft Azure Machine Learning Scholarship from Udacity.
@@ -14,13 +18,13 @@ Please structure your submission using the following steps:
   
   
 # Timeline: 
-**Start date:** 10 August 2020, 00.01am UTC
+**Start date:** 10 August 2020, 00.01am UTC <br />
 **End date:** 1 September 2020 11.59pm UTC
 
 
 # Categories:
 
-- Supervised Machine Learning
+- Supervised Machine Learning 
 - Unsupervised Machine Learning
 - Reinforcement Machine Learning
 - Others
