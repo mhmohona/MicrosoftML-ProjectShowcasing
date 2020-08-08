@@ -18,7 +18,7 @@ Please structure your submission using the following steps:
   
   
 # Timeline: 
-**Start date:** 10 August 2020, 00.01am UTC <br />
+**Start date:** 17 August 2020, 00.01am UTC <br />
 **End date:** 1 September 2020 11.59pm UTC
 
 
@@ -30,5 +30,6 @@ Please structure your submission using the following steps:
 - Others  <br />
 
   
+
 
 > Participation is not mandatory for scholars.
