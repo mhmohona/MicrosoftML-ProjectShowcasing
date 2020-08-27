@@ -1,11 +1,6 @@
-# Submission
+## Submission:
 
-Please make sure to add following materials before submitting: 
+Participants must submit the following materials: 
 
-- **Project proposal:** ReadMe file which explains the project and the team: 
-  - Who the team is 
-  - what the project does 
-  - who the project is for and 
-  - how participants will bring the project to market.
-- **Presentation video:** 3 minute pitch and demo video link.
-- **Software:** usable by the judges.
+- **Project proposal:** Markdown file (ReadMe.md) which explains the project and the team: Team members’ name; what the project does; who the project is for; used technology, etc. 
+- **Project Implementation:** Juyter notebook and/or pdf file and/or Presentation video (1 to 3 minute) pitch.
