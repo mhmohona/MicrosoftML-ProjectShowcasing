@@ -4,7 +4,7 @@
 
 # Microsoft Azure Machine Learning Scholarship Project Showcasing Challenge
 
-A platform to keep and showcase all the open sources projects that are implemented from individual or study groups of Microsoft Azure Machine Learning Scholarship from Udacity.
+A challenge to keep and showcase all the open sources projects that are implemented from individual or study groups of Microsoft Azure Machine Learning Scholarship from Udacity.
 
 **For whom:** Individuals or study groups
 
