@@ -49,18 +49,53 @@ Please structure your submission using the following steps:
   - [Free Azure Studio Classic](https://studio.azureml.net/)
 
   
-  
+## Evaluation criteria: 
+
+Projects will be evaluated based on these criteria: 
+- **Using Azure for Implementation based on Course Material (30%)** = Evaluation of how much course material learned in this challenge is implemented in the project.
+- **Innovation & Creativity (20%) =** Evaluation of the novelty, innovation and creativity introduced in the project such that it is appealing.
+- **Project Implementation (20%) =** Evaluation of how much the planned idea was implemented in this project and how well the results are presented.
+- **Impact & Potential (15%) =** Evaluation of the impact that the project may create on society, or for the betterment of technology, humanity or as a business model which solves a major issue.
+- **Responsible AI (15%) =** Evaluation of the potentiality of the project which is fair, inclusive to everyone, preserves data privacy and is secure.
+
+## Judges:
+
+The Microsoft Azure Project Showcase Committee (see members below) will serve as judges for this showcase challenge.
+
+## Winners:
+
+The committee will select 3 overall winners, as well as 1 winner for each of the 5 criteria. <br />
+Our community will have a chance to vote for their favorite projects.  The 3 with the most votes will win the Scholars Choice Award.  
+
+- Overall Winners - 3 winners
+- Category Winners - 5 winners (1 from each of the 5 category)
+- Community Selected Winners - 3 winners
 
 
+## Prize:
+Winning team will be provided Badges. <br />
+Winner group name will be showcased on the Google Site.
 
-# Categories:
+### Note about organizing team:
 
-- Supervised Machine Learning <br />
-- Unsupervised Machine Learning <br />
-- Reinforcement Machine Learning <br />
-- Others  <br />
+The members of the organizing team cannot participate in this challenge.
 
-  
+## Organizing team:
+
+Name | Slack handle
+------------ | ------------- 
+Aron Castro | Aron Castro
+Laura Truncellito | LauraT
+[Mahfuza Humayra Mohona](http://linkedin.com/in/mhmohona) | Mahfuza Mohona
+Maulin Gogri | Maulin Gogri
+Panth Shah | Panth Shah
+Ruthu S Sanketh | Ruthu
+Shikhar Chhabra | Shikhar Chhabra
+Shudipto Trafder | Shudipto Trafder
+Shuvro Pal | Shuvro Pal
+
+
+*If you face any problem, or have any confusion, please contact any of the organizers*
 
 
 > Participation is not mandatory for scholars.
