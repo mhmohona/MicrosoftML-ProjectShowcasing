@@ -1,0 +1,68 @@
+{% extends "main.html" %}
+{% block content %}
+<h1 class="text-center">Quote finder</h1>
+<div class="container-fluid">
+  <div class="card-columns d-flex justify-content-center">
+    <div class="card w-75 border-0 mt-5">
+      <div class="card-body">
+        <h2 class="card-title text-center" style="font-family: serif;"><b><em>{{ quote }}</em></b></h2>
+        <div class="card-text text-right">{{ author }}</div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="card-columns d-flex justify-content-center">
+    <div class="card w-50 border border-secondary">
+      <div class="card-header">
+        <h5 class="card-title text-center">Pick a random topic</h5>
+      </div>
+      <div class="card-body">
+        <form action="/" method="get">
+          {% for genre in genres %}
+          <button type="submit" class="btn btn-md btn-primary m-sm-2" name="genre" value="{{ genre }}">{{ genre }}</button>
+          {% endfor %}
+        </form>
+        <br>
+        <form action="/" method="get">
+          <div class="input-group mb-3">
+            <input type="text" name="genre" class="form-control" placeholder="Or enter your own word" />
+            <div class="input-group-append">
+              <button type="submit" class="btn btn-outline-secondary">Submit</button>
+            </div>
+          </div>
+        </form>
+        <div class="card-text">Genre requested: <b>{{ requested }}</b></div>
+        <div class="card-text">AI-powered similarity result: <b>{{ matches[0][0] }}</b></div>
+      </div>
+    </div>
+    
+    <div class="card w-50 border border-secondary">
+      <div class="card-header">
+        <h5 class="card-title text-center">Best matches for: <span class="text-muted">{{ requested }}</span></h5>
+      </div>
+      <div class="card-body">
+        <form action="/" method="get">
+          <div class="row">
+          {% for match in matches %}
+          <div class="col-6">
+          <button type="submit" class="w-100 btn btn-md btn-primary m-sm-2" name="genre" value="{{ match[0] }}">
+            {{ match[0] }} ({{ '{:.0%}'.format(match[1]) }})
+          </button>
+          </div>
+          {% endfor %}
+          </div>
+        </div>
+        </form>
+      </div>
+    </div>
+    <div class="container invisible"><div class="m-sm-4">The author of this site is not responsible for the content of the quotes displayed above. For that, blame whoever said it first.</div></div>
+    </div>
+
+  <div class="container fixed-bottom text-center bg-secondary">
+    <div class="m-sm-4">
+      <b>The author of this site is not responsible for the content of the quotes displayed above. For that, blame whoever said it first.</b><br>
+      Source code at <a href="https://github.com/scign/quotr"><span class="text-white">https://github.com/scign/quotr</span></a>
+    </div>
+  </div>
+</div>
+{% endblock %}
