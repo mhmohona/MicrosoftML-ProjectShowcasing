@@ -10,13 +10,13 @@ A challenge to keep and showcase all the open sources projects that are implemen
 
 ## Timeline: 
 **Start date:** 28 August 2020, 00.01am UTC <br />
-**End date:** 5 September 2020, 11.59pm UTC
+**End date:** 20 September 2020, 11.59pm UTC
 
 
 ## Rules:
 
 - Knowledge gained from the coursework must be implemented.
-- Project must have been created during the challenge period.
+- Project must have been created during the Azure scholarship period.
 - Registration form must be completed.
 - Project must be submitted before the deadline.
 - One can participate in multiple projects. 
