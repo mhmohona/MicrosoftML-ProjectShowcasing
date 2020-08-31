@@ -351,3 +351,4 @@ coverage.xml
 .pytest_cache/
 
 login_details.json
+.venv

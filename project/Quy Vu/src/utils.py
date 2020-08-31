@@ -63,3 +63,10 @@ class DBConnection:
             resultant = pd.read_sql_query(statement, conn)
 
         return resultant
+
+
+def load_data(folder='train'):
+    features = pd.read_csv('./data/{}/features.csv'.format(folder))
+    labels = pd.read_csv('./data/{}/labels.csv'.format(folder))
+
+    return features, labels
