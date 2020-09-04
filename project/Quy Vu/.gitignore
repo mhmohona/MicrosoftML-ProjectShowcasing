@@ -352,3 +352,5 @@ coverage.xml
 
 login_details.json
 .venv
+envs_run
+envs_dev

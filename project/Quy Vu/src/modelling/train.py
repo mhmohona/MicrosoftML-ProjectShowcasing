@@ -7,8 +7,7 @@ from azureml.core.model import Model
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score, roc_auc_score, log_loss, recall_score
 from sklearn.model_selection import train_test_split
-from src.utils import DBConnection
-
+from src.utils import DBConnection, update_metadata
 
 # Get data from database
 db = DBConnection(source_file='./login_details.json')
@@ -28,9 +27,10 @@ features_train, features_test, labels_train, labels_test = train_test_split(
 max_depths = np.arange(2, 8)
 min_samples_splits = [2, 4, 8, 16, 32]
 BEST_RECALL = 0
-MODEL_NAME = 'best_model.pkl'
-FILENAME = './models/' + MODEL_NAME
-EXPERIMENT_NAME = 'heartfailure_randomforest_greedy'
+MODEL_FILE = 'best_model.pkl'
+MODEL_PATH = './models/' + MODEL_FILE
+MODEL_NAME = EXPERIMENT_NAME = 'heartfailure_randomforest_greedy'
+MODEL_DESCRIPTION = 'Heart failure predictor with RF'
 workspace = Workspace.from_config()
 
 # Create new experiment
@@ -67,8 +67,8 @@ for max_depth in max_depths:
             BEST_RECALL = current_recall
             run_metrics = run.get_metrics()
 
-            joblib.dump(value=model, filename=FILENAME)
-            run.upload_file(name=MODEL_NAME, path_or_stream=FILENAME)
+            joblib.dump(value=model, filename=MODEL_PATH)
+            run.upload_file(name=MODEL_FILE, path_or_stream=MODEL_PATH)
 
         run.complete()
 
@@ -77,8 +77,17 @@ with open('./outputs/best_run_metrics.json', 'w') as f:
 
 # Register model
 model = Model.register(
-    model_path=FILENAME,
-    model_name=EXPERIMENT_NAME,
-    description='Heart failure predictor',
+    model_path=MODEL_PATH,
+    model_name=MODEL_NAME,
+    description=MODEL_DESCRIPTION,
     workspace=workspace
 )
+
+# Update metadata
+update_metadata({
+    "model_file": MODEL_FILE,
+    "model_path": MODEL_PATH,
+    "experiment_name": EXPERIMENT_NAME,
+    "model_name": MODEL_NAME,
+    "model_description": MODEL_DESCRIPTION
+})

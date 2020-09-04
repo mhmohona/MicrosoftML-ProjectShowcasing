@@ -2,6 +2,7 @@
 """Scoring script"""
 import logging
 import json
+import os
 import pandas as pd
 import joblib
 
@@ -9,7 +10,8 @@ import joblib
 def init():
     """One time initialisation"""
     global MODEL
-    MODEL = joblib.load('./models/best_model.pkl')
+    MODEL = joblib.load(os.path.join(os.getenv('AZUREML_MODEL_DIR'), 'best_model.pkl'))
+
     logging.info('Model loaded')
 
 

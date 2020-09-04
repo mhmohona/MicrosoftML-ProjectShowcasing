@@ -70,3 +70,14 @@ def load_data(folder='train'):
     labels = pd.read_csv('./data/{}/labels.csv'.format(folder))
 
     return features, labels
+
+
+def load_metadata():
+    return json.load(open('./metadata.json'))
+
+
+def update_metadata(updating_dict):
+    metadata = load_metadata()
+    metadata.update(updating_dict)
+    with open('./metadata.json', 'w') as f:
+        json.dump(metadata, f, indent=4)
