@@ -14,5 +14,26 @@ As I dont have a lot of time - I'm a working mom ;) - I will focus on a supervis
 
 This project is aimed to help beginners like me to have in one project the synthetic visualization of the concepts, the process and an implementation of this.
 
- 
+## Used technologies
+
+/!\ Brouillon Jupyter Notebook ; Microsoft Azure ML 
+
+## First implementation - Titanic
+### Data used
+
+The data I use for this first implementation are the ![data on the Titanic from Kaggle](https://www.kaggle.com/c/titanic/data)
+
+### Steps
+
+- analyse the type of problem you are facing and know your data
+
+- prepare your data 
+
+- train your model
+
+- evaluate your model
+
+
+
+
 
