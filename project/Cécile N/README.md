@@ -8,8 +8,11 @@ As I dont have a lot of time - I'm a working mom ;) - I will focus on a supervis
 
 ## Team
 
-I'm alone on this one
+**Slack name :** Cécile N. => I'm alone on this one
 
-**Slack name :** Cécile N.  
+## Who this project is for ?
 
-## Steps 
+This project is aimed to help beginners like me to have in one project the synthetic visualization of the concepts, the process and an implementation of this.
+
+ 
+
