@@ -21,7 +21,7 @@ This project is aimed to help beginners like me to have in one project the synth
 ## First implementation - Titanic
 ### Data used
 
-The data I use for this first implementation are the ![data on the Titanic from Kaggle](https://www.kaggle.com/c/titanic/data)
+The data I use for this first implementation are the [data on the Titanic from Kaggle](https://www.kaggle.com/c/titanic/data)
 
 ### Steps
 
