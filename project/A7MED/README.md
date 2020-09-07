@@ -94,4 +94,4 @@ The trained model was then deployed as a REST API endpoint that can be consumed 
 It’s important to load the model only once on startup to avoid loading the model everytime a request is sent to the REST API endpoint and to curb memory consumption
 
 Fig 1 Code snippet where the pytorch model is loaded as a global variable
-![Load model](https://octodex.github.com/images/yaktocat.png)
+![Load model](https://github.com/waqasne/MicrosoftML-ProjectShowcasing/blob/master/project/A7MED/LoadModel-CodeSnippet.png)
