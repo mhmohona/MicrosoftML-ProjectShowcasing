@@ -44,6 +44,9 @@ Communication is a need in all situations. People communicate best when they fin
 * Inclusiveness - The model is sourced from the spaCy en_core_web_md model, trained on OntoNotes 5 which is a diverse dataset to ensure reasonable inclusivess of ideas. Quotes are in English only which matches the model vocabulary and is the most widely spoken language in the world which further facilitates communication.
 * Transparency - The page makes it clear that an AI model is involved in returning information ("AI-powered similarity result" is displayed), and shows potential other matches that can be selected for further refinement.
 
+## Design architecture
+![Architecture](architecture.png)
+
 ## Instructions to set up
 1. Fork this repository on GitHub
 1. Open portal.azure.com
