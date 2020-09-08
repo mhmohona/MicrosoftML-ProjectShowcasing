@@ -55,7 +55,7 @@ The images used in this project of the three types of lungs were used in .jpeg f
 The final dataset used had a total of 3093 images of X-ray, which have been divided into three groups and each one has three classes of X-ray images that belong to normal lungs, regular pneumonia lungs and COVID-19 pneumonia lungs. Below, the number of images used for each group is showed on Fig. 1.
 
 Figure 1. Number of X-ray images used in the deep learning model for COVID-19 diagnosis.
-![Table](https://github.com/waqasne/MicrosoftML-ProjectShowcasing/blob/master/project/A7MED/images/number_images.png =800x190)
+![Table](https://github.com/waqasne/MicrosoftML-ProjectShowcasing/blob/master/project/A7MED/images/number_images.png)
 
 ## Data Preprocessing
 Image resizing and conversion to RGB
@@ -84,3 +84,19 @@ It’s important to load the model only once on startup to avoid loading the mod
 Figure 2. Code snippet where the pytorch model is loaded as a global variable.
 
 ![Load model](https://github.com/waqasne/MicrosoftML-ProjectShowcasing/blob/master/project/A7MED/images/LoadModel-CodeSnippet.png)
+
+## Python libraries used
+
+   1. flask: allows to run a REST API endpoint using Python
+   2. flask_cors: allows to set access permissions on the REST API, for security reasons
+   3. urllib.request: to download the image file and save it to the local computer or server
+   4. PIL: to open the image file and convert it to RGB
+   5. torchvision.transforms: to resize the image and convert it to the pytorch’s tensor format as requested by the convolutional neural network
+   6. torch: to load the model
+   7. torch.nn: to calculate the Softmax probability distribution of the output
+   8. flask.jsonify: to return the output in JSON format
+
+Figure 3. Code snippet where the REST API endpoint is defined.
+
+![Rest API defined](https://github.com/waqasne/MicrosoftML-ProjectShowcasing/blob/master/project/A7MED/images/LoadModel-CodeSnippet.png)
+
