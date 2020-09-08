@@ -98,5 +98,5 @@ Figure 2. Code snippet where the pytorch model is loaded as a global variable.
 
 Figure 3. Code snippet where the REST API endpoint is defined.
 
-![Rest API defined](https://github.com/waqasne/MicrosoftML-ProjectShowcasing/blob/master/project/A7MED/images/LoadModel-CodeSnippet.png)
+![Rest API defined](https://github.com/waqasne/MicrosoftML-ProjectShowcasing/blob/master/project/A7MED/images/RESTAPIEndpoint-CodeSnippet.png)
 
