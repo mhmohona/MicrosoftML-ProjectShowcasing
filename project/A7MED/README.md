@@ -95,4 +95,4 @@ It’s important to load the model only once on startup to avoid loading the mod
 
 Fig 1 Code snippet where the pytorch model is loaded as a global variable
 
-![Load model](https://github.com/waqasne/MicrosoftML-ProjectShowcasing/blob/master/project/A7MED/LoadModel-CodeSnippet.png)
+![Load model](https://github.com/waqasne/MicrosoftML-ProjectShowcasing/blob/master/project/A7MED/images/LoadModel-CodeSnippet.png)
