@@ -44,6 +44,32 @@ Communication is a need in all situations. People communicate best when they fin
 * Inclusiveness - The model is sourced from the spaCy en_core_web_md model, trained on OntoNotes 5 which is a diverse dataset to ensure reasonable inclusivess of ideas. Quotes are in English only which matches the model vocabulary and is the most widely spoken language in the world which further facilitates communication.
 * Transparency - The page makes it clear that an AI model is involved in returning information ("AI-powered similarity result" is displayed), and shows potential other matches that can be selected for further refinement.
 
+## Design architecture
+![Architecture](architecture.png)
+
+## Instructions to set up
+1. Fork this repository on GitHub
+1. Open portal.azure.com
+1. Add a new App Service
+1. Either set up a new resource group or add the service to an existing one
+1. Select a name for the app service
+1. Select to publish the code rather than a docker container
+1. Select the runtime stack as python 3.7 at minimum
+1. Select a suitable region
+1. Either select an existing App Service Plan or create a new one. If you have one available, this code will work on a free tier service plan
+1. Click "Review + Create", then "Create"
+1. Once the App Service is created, go to the Deployment Center on the left
+1. Select GitHub as the source (may ask you to sign in and authorize) and click "Continue"
+1. Select "App Service build service" and click "Continue"
+1. Select the repository you forked and the relevant branch and click "Continue" and "Finish"
+
+The app will be pulled from GitHub, set up and run automatically. Within a couple of minutes the app will be available at the URL you selected in step #5.
+
+## Description
+* On startup the application loads the library of quotes from a CSV file containing the quote, the author and the genre
+* The upper part of the interface initially presents the user with a random quote
+* The lower left part has an input section where the user can select from a random selection of existing topics or enter a word of their own choosing
+* The lower right shows the closest matches to the selected topic
 
 ## Potential further improvements
 * Show similar options even when a match is found in the database genres
