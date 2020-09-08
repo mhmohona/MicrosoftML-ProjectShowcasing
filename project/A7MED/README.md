@@ -52,22 +52,10 @@ While lungs with COVID-19 pneumonia were extracted from a publicly available Git
 
 The images used in this project of the three types of lungs were used in .jpeg format, therefore it is considered as a requirement of the application.
 
-The final dataset used had a total of ## images of X-ray, which have been divided into three groups and each one has three classes of X-ray images that belong to normal lungs, regular pneumonia lungs and COVID-19 pneumonia lungs. Below, the number of images used for each group is mentioned:
-1. Training set: 
-   1. Normal - ## images
-   2. Regular pneumonia - ## images
-   3. COVID-19 pneumonia - ## images
-   4. Total of images: ##
-2. Validation set:
-   1. Normal - ## images
-   2. Regular pneumonia - ## images
-   3. COVID-19 pneumonia - ## images
-   4. Total of images: ##
-3. Testing set:
-   1. Normal - ## images
-   2. Regular pneumonia - ## images
-   3. COVID-19 pneumonia - ## images
-   4. Total of images: ##
+The final dataset used had a total of 3093 images of X-ray, which have been divided into three groups and each one has three classes of X-ray images that belong to normal lungs, regular pneumonia lungs and COVID-19 pneumonia lungs. Below, the number of images used for each group is showed on Fig. 1.
+
+Figure 1. Number of X-ray images used in the deep learning model for COVID-19 diagnosis.
+![Table](https://github.com/waqasne/MicrosoftML-ProjectShowcasing/blob/master/project/A7MED/images/number_images.png)
 
 ## Data Preprocessing
 Image resizing and conversion to RGB
@@ -93,6 +81,6 @@ The trained model was then deployed as a REST API endpoint that can be consumed 
 
 It’s important to load the model only once on startup to avoid loading the model everytime a request is sent to the REST API endpoint and to curb memory consumption
 
-Fig 1 Code snippet where the pytorch model is loaded as a global variable
+Figure 2. Code snippet where the pytorch model is loaded as a global variable.
 
 ![Load model](https://github.com/waqasne/MicrosoftML-ProjectShowcasing/blob/master/project/A7MED/images/LoadModel-CodeSnippet.png)
