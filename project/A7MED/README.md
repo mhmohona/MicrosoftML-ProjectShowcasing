@@ -15,9 +15,14 @@ This disease has been alarming because of the speed with which it spreads, in ad
 
 As already mentioned, the project seeks to classify between three types of lung condition, since it has been seen that COVID-19 pneumonia is very similar to regular pneumonia, which has made it difficult to give diagnoses. Many investigations are being developed in order to differentiate between COVID-19 pneumonia and other types of pneumonia, since this type of information can be very useful for diagnoses and the simple understanding of how it is that COVID-19 affects the lungs. 
 
-In order to be able to help the area of ​​medicine, the implementation of an intelligent model available to everyone is innovative, practical and useful to provide the appropriate service to the patient. 
+In order to be able to help the area of medicine, the implementation of an intelligent model available to everyone is innovative, practical and useful to provide the appropriate service to the patient. 
 
-For the project, the steps to follow were: 1) obtaining, preparing and exploring the data, 2) design, training and validation of a deep neural network, 3) testing of the deep neural network, 4) deployment for real time inferencing and, 5) evaluation of the implementation in a web server.
+For the project, the steps to follow were: 
+   1) Obtaining, preparing and exploring the data.
+   2) Design, training and validation of a deep neural network.
+   3) Testing of the deep neural network. 
+   4) Deployment for real time inferencing.
+   5) Evaluation of the implementation in a web server.
 
 ## Evaluation criteria:
 **1. Using Azure for Implementation based on Course Material (30%) =**
