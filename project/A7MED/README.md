@@ -22,7 +22,7 @@ For the project, the steps to follow were: 1) obtaining, preparing and exploring
 ## Evaluation criteria:
 **1. Using Azure for Implementation based on Course Material (30%) =**
    1. The labs in the course did not show how to train or deploy a model for image classification.
-   2. We deployed the model, as a REST API endpoint for real time inferencing, to a virtual machine in the cloud
+   2. We deployed the model, as a REST API endpoint for real time inferencing, to a virtual machine in the cloud.
 **2. Innovation & Creativity (20%) = Evaluation of the novelty, innovation and creativity introduced in the project such that it is appealing.**
    1. The model can predict if an X-ray image shows normal lungs, lungs infected with common pneumonia, or lungs infected with COVID-19. This is important to make a difference between common pneumonia and the one caused by COVID-19.
 **3. Project Implementation (20%) = Evaluation of how much the planned idea was implemented in this project and how well the results are presented.**
