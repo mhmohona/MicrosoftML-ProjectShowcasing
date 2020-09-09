@@ -25,12 +25,12 @@ For the project, the steps to follow were:
    5) Evaluation of the implementation in a web server.
 
 ## Evaluation criteria:
-**1. Using Azure for Implementation based on Course Material (30%) =**
+1. Using Azure for Implementation based on Course Material (30%) =
    1. The labs in the course did not show how to train or deploy a model for image classification.
    2. We deployed the model, as a REST API endpoint for real time inferencing, to a virtual machine in the cloud.
-**2. Innovation & Creativity (20%) = Evaluation of the novelty, innovation and creativity introduced in the project such that it is appealing.**
+2. Innovation & Creativity (20%) = Evaluation of the novelty, innovation and creativity introduced in the project such that it is appealing.
    1. The model can predict if an X-ray image shows normal lungs, lungs infected with common pneumonia, or lungs infected with COVID-19. This is important to make a difference between common pneumonia and the one caused by COVID-19.
-**3. Project Implementation (20%) = Evaluation of how much the planned idea was implemented in this project and how well the results are presented.**
+3. Project Implementation (20%) = Evaluation of how much the planned idea was implemented in this project and how well the results are presented.
    1. To improve accuracy of the model, we planned to train 3 binary classifiers and use ensemble learning to determine the final result by a voting mechanism
       * First model would have two classes: "normal" and "not normal"
       * Second model would have two classes: "pneumonia" and "not pneumonia"
@@ -40,9 +40,9 @@ For the project, the steps to follow were:
       * First model: "not normal"
       * Second model: "not pneumonia"
       * Third model: "covid-19"
-**4. Impact & Potential (15%) =**
+4. Impact & Potential (15%) =
    1. The model could be a tool to aid physicians to diagnose COVID-19. There’s a shortage of PCR testing kits, the gold standard to diagnose COVID-19, in countries like Peru, where a blood test to detect coronavirus antibodies is used instead.
-**5. Responsible AI (15%) = Evaluation of the potentiality of the project which is fair, inclusive to everyone, preserves data privacy and is secure.**
+5. Responsible AI (15%) = Evaluation of the potentiality of the project which is fair, inclusive to everyone, preserves data privacy and is secure.
    1. The model preserves data privacy because no PII (Personal Identifiable Information) is used. The input is a chest X-ray, and the output is a label (normal, pneumonia or COVID-19) and a probability (0 to 1).
    2. The model could be secured if access restrictions are added to the endpoint, to prevent unauthorized use
    3. The model is as inclusive as its dataset. If most of the chest X-ray images belong to asian patients, then the model can better predict COVID-19 for asian patients than for african people. That’s why it is important to collect data from all races, age and gender.
