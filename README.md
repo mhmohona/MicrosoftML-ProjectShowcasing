@@ -34,7 +34,7 @@ Participants must submit the following materials:
 ## Guidelines:
 
 Please structure your submission using the following steps:
-- Create a directory with your slack username in the [project folder](https://github.com/mhmohona/MicrosoftML-ProjectShowcasing/tree/master/project). If you're new to GitHub, you can follow this [tutorial](https://docs.google.com/document/d/11y1MESDAGZmxdGNefh1mg3VnbJL1TcFcdfducD5c5zE/edit?usp=sharing)
+- Create a directory with your slack username in the [project folder](https://github.com/mhmohona/MicrosoftML-ProjectShowcasing/tree/master/project). If you're new to GitHub, you can follow this [tutorial](https://docs.google.com/document/d/11y1MESDAGZmxdGNefh1mg3VnbJL1TcFcdfducD5c5zE/edit?usp=sharing) by @jhonatantirado
 - For implementation, include a Jupyter notebook (if you are using) or a report (in pdf format) that demonstrates a run of your code showing printed output, graphs, etc.
 - Structure your code into one or more modules in that directory
   - Code should be well-documented. This will help viewers to understand why and what you have done.
