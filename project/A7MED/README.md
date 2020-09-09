@@ -100,3 +100,44 @@ Figure 3. Code snippet where the REST API endpoint is defined.
 
 ![Rest API defined](https://github.com/waqasne/MicrosoftML-ProjectShowcasing/blob/master/project/A7MED/images/RESTAPIEndpoint-CodeSnippet.png)
 
+## Deployment
+
+The model was deployed to a virtual machine (VM) in the cloud, but the VM is shutdown to avoid costs ($). It could be deployed to the Microsoft Azure cloud, or any other cloud provider.
+
+It was started from the command line
+
+   *  Endpoint: /todo/api/v1.0/covid19
+   
+Figure 4. REST API endpoint running in the command line.
+
+![Rest API running](https://github.com/waqasne/MicrosoftML-ProjectShowcasing/blob/master/project/A7MED/images/RESTAPIEndpoint-CodeSnippet.png)
+
+## Testing the implementation
+
+You can use POSTMAN or any similar HTTP client to send requests to the endpoint
+
+## Input: POST request
+
+The following is a sample expected input in JSON format.
+
+{
+"imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQEAwwYsXILZIrDXx7MYIqECR2uTosvETA3qQ&usqp=CAU"
+}
+
+imageUrl: is the link to the image. The chest X- ray image in JPEG format should be uploaded to any public website. The image URL should be sent as input in the request, because sending a string is easier and quicker than sending an actual image file
+
+Figure 5. POST request in JSON format using the HTTP client POSTMAN.
+
+![POST_request](https://github.com/waqasne/MicrosoftML-ProjectShowcasing/blob/master/project/A7MED/images/RESTAPIEndpoint-CodeSnippet.png)
+
+## Output: POST response
+
+The REST API endpoint receives the request, processes it and returns a response in JSON format.
+
+label: is the predicted class for the chest X-ray image submitted in the request
+probability: the probability of the image being the class indicated in the label
+
+
+Figure 6. POST response in JSON format using the HTTP client POSTMAN.
+
+![POST_response](https://github.com/waqasne/MicrosoftML-ProjectShowcasing/blob/master/project/A7MED/images/RESTAPIEndpoint-CodeSnippet.png)
