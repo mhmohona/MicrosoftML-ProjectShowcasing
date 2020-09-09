@@ -110,7 +110,7 @@ It was started from the command line
    
 Figure 4. REST API endpoint running in the command line.
 
-![Rest API running](https://github.com/waqasne/MicrosoftML-ProjectShowcasing/blob/master/project/A7MED/images/RESTAPIEndpoint-CodeSnippet.png)
+![Rest API running](https://github.com/waqasne/MicrosoftML-ProjectShowcasing/blob/master/project/A7MED/images/FlaskEndpointRunning.png)
 
 ## Testing the implementation
 
@@ -128,7 +128,7 @@ imageUrl: is the link to the image. The chest X- ray image in JPEG format should
 
 Figure 5. POST request in JSON format using the HTTP client POSTMAN.
 
-![POST_request](https://github.com/waqasne/MicrosoftML-ProjectShowcasing/blob/master/project/A7MED/images/RESTAPIEndpoint-CodeSnippet.png)
+![POST_request](https://github.com/waqasne/MicrosoftML-ProjectShowcasing/blob/master/project/A7MED/images/POSTRequestJSONPostman.png)
 
 ## Output: POST response
 
@@ -140,4 +140,4 @@ probability: the probability of the image being the class indicated in the label
 
 Figure 6. POST response in JSON format using the HTTP client POSTMAN.
 
-![POST_response](https://github.com/waqasne/MicrosoftML-ProjectShowcasing/blob/master/project/A7MED/images/RESTAPIEndpoint-CodeSnippet.png)
+![POST_response](https://github.com/waqasne/MicrosoftML-ProjectShowcasing/blob/master/project/A7MED/images/POSTResponseJSONPostman.png)
