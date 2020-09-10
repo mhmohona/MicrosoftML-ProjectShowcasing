@@ -1,7 +1,7 @@
 # Deep learning model for COVID-19 diagnosis using chest X-ray images
 Microsoft Azure Machine Learning Scholarship Project Showcasing Challenge
 
-this is a conflict
+solving the conflict
 
 ## Team:
 @A7MED, @Jhonatan Tirado, @Radha Revathi G, @Lourdes Lizbeth Luna Rodríguez
