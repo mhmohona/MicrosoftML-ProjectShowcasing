@@ -7,7 +7,9 @@ When you are ready to submit your project, please add `complete` level and assig
 -->
 
 
-Slack name: 
+**Slack name:**
+
+**Checklist: **
 
 - [ ] Read [documentation](https://docs.google.com/document/d/1p0rplg0ZrIFfBabY1WyhyVOxjVjxMORC3koV00rscAI/edit?usp=drivesdk) fully
 - [ ] Filled up [registration form](forms.gle/1gghccdj9B6jqyB27)
