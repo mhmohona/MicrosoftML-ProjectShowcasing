@@ -25,13 +25,14 @@ The data I use for this first implementation are the [data on the Titanic from K
 
 ### Steps
 
-- analyse the type of problem you are facing and know your data
+- [analyse the type of problem you are facing and know your data](https://github.com/NAVERGONI/MicrosoftML-ProjectShowcasing/blob/master/project/C%C3%A9cile%20N/AnalyzeTheProblem-KnowYourData.ipynb)
 
 - prepare your data 
 
 - train your model
 
 - evaluate your model
+
 
 
 
