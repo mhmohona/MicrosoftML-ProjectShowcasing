@@ -16,6 +16,7 @@ This project is aimed to help beginners like me to have in one project the synth
 
 ## Used technologies
 
+❗️❗️❗️❗️❗️ TODO
 /!\ Brouillon Jupyter Notebook ; Microsoft Azure ML 
 
 ## First implementation - Titanic
@@ -32,9 +33,12 @@ The data I use for this first implementation are the [data on the Titanic from K
 - train your model
 
 - evaluate your model
-
-
-
+   
+   
+## References
+   
+   
+❗️❗️❗️❗️❗️ TODO 
 
 
 
