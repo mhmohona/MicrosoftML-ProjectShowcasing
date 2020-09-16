@@ -17,7 +17,11 @@ This project is aimed to help beginners like me to have in one project the synth
 ## Used technologies
 
 ❗️❗️❗️❗️❗️ TODO
-/!\ Brouillon Jupyter Notebook ; Microsoft Azure ML 
+/!\ Brouillon 
+- Jupyter Notebook (Anaconda 3)
+- GitHub Desktop
+- Microsoft Azure Machine Learning Studio (classic)
+
 
 ## First implementation - Titanic
 ### Data used
@@ -26,9 +30,9 @@ The data I use for this first implementation are the [data on the Titanic from K
 
 ### Steps
 
-- [analyse the type of problem you are facing and know your data](https://github.com/NAVERGONI/MicrosoftML-ProjectShowcasing/blob/master/project/C%C3%A9cile%20N/AnalyzeTheProblem-KnowYourData.ipynb)
+- [analyse the type of problem you are facing](https://github.com/NAVERGONI/MicrosoftML-ProjectShowcasing/blob/master/project/C%C3%A9cile%20N/AnalyzeTheProblem-KnowYourData.ipynb)
 
-- prepare your data 
+- know and prepare your data 
 
 - train your model
 
