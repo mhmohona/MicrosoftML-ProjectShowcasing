@@ -32,7 +32,7 @@ The data I use for this first implementation are the [data on the Titanic from K
 
 - [Explore and prepare your data](https://github.com/NAVERGONI/MicrosoftML-ProjectShowcasing/blob/master/project/C%C3%A9cile%20N/ExploreAndPrepareYourData.ipynb)
 
-- [Boost your results - Find the best model](https://github.com/NAVERGONI/MicrosoftML-ProjectShowcasing/blob/master/project/C%C3%A9cile%20N/BoostYourResults_FindTheBestModel)
+- [Boost your results - Find the best model](https://github.com/NAVERGONI/MicrosoftML-ProjectShowcasing/blob/master/project/C%C3%A9cile%20N/BoostYourResults_FindTheBestModel.ipynb)
    
    
 ## References
