@@ -21,7 +21,7 @@ This project is aimed to help beginners like me to have in one project the synth
 - Jupyter Notebook (Anaconda 3)
 - GitHub Desktop
 - Microsoft Azure Machine Learning Studio (classic)
-
+- Python
 
 ## First implementation - Titanic
 ### Data used
@@ -30,19 +30,20 @@ The data I use for this first implementation are the [data on the Titanic from K
 
 ### Steps
 
-- [analyse the type of problem you are facing](https://github.com/NAVERGONI/MicrosoftML-ProjectShowcasing/blob/master/project/C%C3%A9cile%20N/AnalyzeTheProblem-KnowYourData.ipynb)
+- [Analyse the type of problem you are facing](https://github.com/NAVERGONI/MicrosoftML-ProjectShowcasing/blob/master/project/C%C3%A9cile%20N/AnalyzeTheProblem.ipynb)
 
-- know and prepare your data 
+- [Explore and prepare your data](https://github.com/NAVERGONI/MicrosoftML-ProjectShowcasing/blob/master/project/C%C3%A9cile%20N/ExploreAndPrepareYourData.ipynb)
 
-- train your model
+- Train your model
 
-- evaluate your model
+- Evaluate your model
    
    
 ## References
    
    
 ❗️❗️❗️❗️❗️ TODO 
+UDACITY - Microsoft Azure ML Scholarship
 
 
 
