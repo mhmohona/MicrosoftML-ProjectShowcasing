@@ -16,12 +16,10 @@ This project is aimed to help beginners like me to have in one project the synth
 
 ## Used technologies
 
-❗️❗️❗️❗️❗️ TODO
-/!\ Brouillon 
 - Jupyter Notebook (Anaconda 3)
 - GitHub Desktop
 - Microsoft Azure Machine Learning Studio (classic)
-- Python
+
 
 ## First implementation - Titanic
 ### Data used
@@ -34,9 +32,7 @@ The data I use for this first implementation are the [data on the Titanic from K
 
 - [Explore and prepare your data](https://github.com/NAVERGONI/MicrosoftML-ProjectShowcasing/blob/master/project/C%C3%A9cile%20N/ExploreAndPrepareYourData.ipynb)
 
-- Train your model
-
-- Evaluate your model
+- [Boost your results - Find the best model](https://github.com/NAVERGONI/MicrosoftML-ProjectShowcasing/blob/master/project/C%C3%A9cile%20N/BoostYourResults_FindTheBestModel)
    
    
 ## References
@@ -45,5 +41,12 @@ The data I use for this first implementation are the [data on the Titanic from K
 ❗️❗️❗️❗️❗️ TODO 
 UDACITY - Microsoft Azure ML Scholarship
 
+## Project extension
+___
+
+  - A second implementation with a linear regression problem (e.g.: [House prices on Kaggle](https://www.kaggle.com/c/house-prices-advanced-regression-techniques/data)
+  
+  - Implement the same pipeline but this time with Python embeded in the Jupyter Notebook instead of the Microsoft Azure Machine Learning Studio
+  
 
 
