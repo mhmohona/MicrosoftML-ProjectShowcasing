@@ -1,0 +1,5 @@
+Pregnancies,Glucose,BloodPressure,SkinThickness,Insulin,BMI,DiabetesPedigreeFunction,Age,Outcome,Predicted_without SMOT,Score,Predicted_with SMOT,Score_with SMOT
+0,123,72,0,0,36.3,0.258,52,1,1,0.7924465,1,0.73904922
+1,106,76,0,0,37.5,0.197,26,0,0,0.04494466,0,0.09594976
+6,190,92,0,0,35.5,0.278,66,1,1,0.56083841,0,0.45857037
+2,88,58,26,16,28.4,0.766,22,0,0,0.03171307,0,0.01363801
