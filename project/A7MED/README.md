@@ -24,6 +24,8 @@ For the project, the steps to follow were:
    4) Deployment for real time inferencing.
    5) Evaluation of the implementation in a web server.
 
+In addition, it is also important to mention that for the development and simulation of this project we used the **PyTorch** library.
+
 ## Evaluation criteria:
 1. Using Azure for Implementation based on Course Material (30%) =
    1. The labs in the course did not show how to train or deploy a model for image classification.
@@ -63,7 +65,10 @@ The final dataset used had a total of 3093 images of X-ray, which have been divi
 ![Table](https://github.com/waqasne/MicrosoftML-ProjectShowcasing/blob/master/project/A7MED/images/number_images.png)
 
 ## Data Preprocessing
-Image resizing and conversion to RGB
+The X-ray images were resized to 224 x 224 and converted to type *Tensor*.
+
+The following code is used to do the mentioned preprocessing:
+   *data_transform = transforms.Compose\(\[transforms.Resize(size=(224, 224)),transforms.ToTensor()\]\)*
 
 ## Model Architecture
 Type and structure of the model selected (convolutional neural network), number and type of layers, input, output
