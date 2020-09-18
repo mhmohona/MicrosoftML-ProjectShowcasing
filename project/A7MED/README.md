@@ -68,18 +68,31 @@ The final dataset used had a total of 3093 images of X-ray, which have been divi
 The X-ray images were resized to 224 x 224 and converted to type *Tensor*.
 
 The following code is used to do the mentioned preprocessing:
+
    *data_transform = transforms.Compose\(\[transforms.Resize(size=(224, 224)),transforms.ToTensor()\]\)*
 
 ## Model Architecture
-Type and structure of the model selected (convolutional neural network), number and type of layers, input, output
+A Convolutional Neural Network (CNN) was implemented for this project, in the Fig. 2 is show the final structure of this CNN, we can note that this CNN has 10 layers, where the Conv2d layers uses the function ReLu like its activation function.
+
+**Figure 2.** Structure of the CNN.
+![model](https://github.com/waqasne/MicrosoftML-ProjectShowcasing/blob/master/project/A7MED/images/model_CNN.png)
 
 ## Model Training and Validation
-Hyperparameters: learning rate, training epochs, batch size
-Algorithms: SGD
-Overfitting
+Hyperparameters: 
+   A. Learning rate = 0.05 
+   B. Training epochs = 1
+   C. Batch size = 20
+Optimizer: 
+   A. Stochastic Gradient Descent (SGD)
+Loss function:
+   A. Cross Entropy
 
 ## Model Testing
-Metrics: overall accuracy, accuracy for each class, confusion matrix
+Accuracy for COVID Chest X-Rays = 95.0%, 175/184
+Accuracy for NORMAL Chest X-Rays = 76.0%, 276/362
+Accuracy for PNEUMONIA Chest X-Rays = 94.0%, 368/390
+
+**Test Accuracy**: 87% (819/936)
 
 ## Deployment for Real Time Inferencing 
 
@@ -91,7 +104,7 @@ The trained model was then deployed as a REST API endpoint that can be consumed 
 
 It’s important to load the model only once on startup to avoid loading the model everytime a request is sent to the REST API endpoint and to curb memory consumption
 
-**Figure 2.** Code snippet where the pytorch model is loaded as a global variable.
+**Figure 3.** Code snippet where the pytorch model is loaded as a global variable.
 
 ![Load model](https://github.com/waqasne/MicrosoftML-ProjectShowcasing/blob/master/project/A7MED/images/LoadModel-CodeSnippet.png)
 
@@ -106,7 +119,7 @@ It’s important to load the model only once on startup to avoid loading the mod
    7. torch.nn: to calculate the Softmax probability distribution of the output
    8. flask.jsonify: to return the output in JSON format
 
-**Figure 3.** Code snippet where the REST API endpoint is defined.
+**Figure 4.** Code snippet where the REST API endpoint is defined.
 
 ![Rest API defined](https://github.com/waqasne/MicrosoftML-ProjectShowcasing/blob/master/project/A7MED/images/RESTAPIEndpoint-CodeSnippet.png)
 
@@ -118,7 +131,7 @@ It was started from the command line
 
    *  Endpoint: /todo/api/v1.0/covid19
    
-**Figure 4.** REST API endpoint running in the command line.
+**Figure 5.** REST API endpoint running in the command line.
 
 ![Rest API running](https://github.com/waqasne/MicrosoftML-ProjectShowcasing/blob/master/project/A7MED/images/FlaskEndpointRunning.png)
 
@@ -136,7 +149,7 @@ The following is a sample expected input in JSON format.
 
 *imageUrl:* is the link to the image. The chest X- ray image in JPEG format should be uploaded to any public website. The image URL should be sent as input in the request, because sending a string is easier and quicker than sending an actual image file
 
-**Figure 5.** POST request in JSON format using the HTTP client POSTMAN.
+**Figure 6.** POST request in JSON format using the HTTP client POSTMAN.
 
 ![POST_request](https://github.com/waqasne/MicrosoftML-ProjectShowcasing/blob/master/project/A7MED/images/POSTRequestJSONPostman.png)
 
@@ -148,6 +161,8 @@ The REST API endpoint receives the request, processes it and returns a response 
 probability: the probability of the image being the class indicated in the label
 
 
-**Figure 6.** POST response in JSON format using the HTTP client POSTMAN.
+**Figure 7.** POST response in JSON format using the HTTP client POSTMAN.
 
 ![POST_response](https://github.com/waqasne/MicrosoftML-ProjectShowcasing/blob/master/project/A7MED/images/POSTResponseJSONPostman.png)
+
+## Conclusions
