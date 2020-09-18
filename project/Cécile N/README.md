@@ -51,7 +51,7 @@ Aside the references that I have cited in the Notebooks I borowed a lot of mater
       
     - Hyperparameters tuning
     
-  - A second implementation with a linear regression problem (e.g.: [House prices on Kaggle](https://www.kaggle.com/c/house-prices-advanced-regression-techniques/data)
+  - A second implementation with a linear regression problem (e.g.: [House prices on Kaggle](https://www.kaggle.com/c/house-prices-advanced-regression-techniques/data))
   
   - Implement the same pipeline but this time with Python embeded in the Jupyter Notebook instead of the Microsoft Azure Machine Learning Studio
   
