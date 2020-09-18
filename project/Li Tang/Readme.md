@@ -1,4 +1,4 @@
-This is a project Readme file. 
+This is a project Readme file, "Machine Learning for Healthcare using Azure".  
 
 The project is to build a machine learning model to accurately predict whether or not the patients in the dataset have diabetes, based on certain diagnostic measurements.  
 
