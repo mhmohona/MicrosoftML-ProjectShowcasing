@@ -35,7 +35,8 @@ implemented Knowledge from course work
 
 **DATASET**
 
-![Dataset](https://drive.google.com/file/d/1zi2AFR7LRqStksvi8JQkuLzhIkG8ENHF/view?usp=sharing)
+![Dataset](https://drive.google.com/uc?export=view&id=1zi2AFR7LRqStksvi8JQkuLzhIkG8ENHF)
+
 
 The dataset contains user purchase history of a certain product along with user information. From the dataset I have trained a model that can detect potential customer.
 
