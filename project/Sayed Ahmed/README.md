@@ -35,7 +35,7 @@ implemented Knowledge from course work
 
 **DATASET**
 
-  
+![Dataset](https://drive.google.com/file/d/1zi2AFR7LRqStksvi8JQkuLzhIkG8ENHF/view?usp=sharing)
 
 The dataset contains user purchase history of a certain product along with user information. From the dataset I have trained a model that can detect potential customer.
 
@@ -52,5 +52,6 @@ The algorithm I have trained using this dataset are
 
 I have included Confusion matrix and plot of both training and test result, so that the performance of the model could be understood properly. 
 
-
-RESULTS AND PLOTS In GOOGLE DRIVE: [Click here to view pdf](https://drive.google.com/file/d/1a-Ww5pidHPeCRGgHdOpMkOom07rw0bj7/view?usp=sharing)
+RESULTS AND PLOTS of algorithms are is added into this git folder see the pdf file named as 'Project Report by Sayed Ahmed.pdf'
+or view in google Drive
+RESULTS AND PLOTS PDF IN GOOGEL DRIVE: [Click here to view pdf](https://drive.google.com/file/d/1a-Ww5pidHPeCRGgHdOpMkOom07rw0bj7/view?usp=sharing)
