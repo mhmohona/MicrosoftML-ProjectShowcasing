@@ -65,9 +65,7 @@ The final dataset used had a total of 3093 images of X-ray, which have been divi
 ![Table](https://github.com/waqasne/MicrosoftML-ProjectShowcasing/blob/master/project/A7MED/images/number_images.png)
 
 ## Data Preprocessing
-The X-ray images were resized to 224 x 224 and converted to type *Tensor*.
-
-The following code is used to do the mentioned preprocessing:
+The X-ray images were resized to 224 x 224 and converted to type *Tensor*. The following code is used to do the mentioned preprocessing:
 
    *data_transform = transforms.Compose\(\[transforms.Resize(size=(224,224)),transforms.ToTensor()\]\)*
 
@@ -79,13 +77,15 @@ A Convolutional Neural Network (CNN) was implemented for this project, in the Fi
 
 ## Model Training and Validation
 Hyperparameters:  
-   A. Learning rate = 0.05  
-   B. Training epochs = 1  
-   C. Batch size = 20  
+      A. Learning rate = 0.05  
+      B. Training epochs = 1  
+      C. Batch size = 20  
+      
 Optimizer:  
-   A. Stochastic Gradient Descent (SGD)  
+      A. Stochastic Gradient Descent (SGD)  
+      
 Loss function:  
-   A. Cross Entropy  
+      A. Cross Entropy  
 
 ## Model Testing
 Accuracy for COVID-19 Chest X-Rays = 95.0%, 175/184  
