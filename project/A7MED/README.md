@@ -72,7 +72,7 @@ The X-ray images were resized to 224 x 224 and converted to type *Tensor*. The f
 ## Model Architecture
 A Convolutional Neural Network (CNN) was implemented for this project, in the Fig. 2 is show the final structure of this CNN, we can note that this CNN has 10 layers, where the Conv2d layers uses the function ReLu like its activation function.
 
-**Figure 2.** Structure of the CNN.
+**Figure 2.** Structure of the CNN.   
 ![model](https://github.com/waqasne/MicrosoftML-ProjectShowcasing/blob/master/project/A7MED/images/model_CNN.png)
 
 ## Model Training and Validation
