@@ -1,5 +1,3 @@
-
-
 ![challenge](/images/Banner.png)
 
 # Automated Incident Routing System 
@@ -23,7 +21,7 @@ Process Text (NLP) : ( Reference : [https://docs.microsoft.com/en-us/azure/machi
 
 Feature Hashing (NLP) : ( Reference : [https://docs.microsoft.com/en-us/azure/machine-learning/studio-module-reference/feature-hashing](https://docs.microsoft.com/en-us/azure/machine-learning/studio-module-reference/feature-hashing))
 
-MultiClass Boosteed Discsion Tree ( Reference : [https://docs.microsoft.com/en-us/azure/machine-learning/algorithm-module-reference/multiclass-boosted-decision-tree](https://docs.microsoft.com/en-us/azure/machine-learning/algorithm-module-reference/multiclass-boosted-decision-tree))
+MultiClass Boosteed Decision Tree ( Reference : [https://docs.microsoft.com/en-us/azure/machine-learning/algorithm-module-reference/multiclass-boosted-decision-tree](https://docs.microsoft.com/en-us/azure/machine-learning/algorithm-module-reference/multiclass-boosted-decision-tree))
 
 
 
