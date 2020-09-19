@@ -5,7 +5,8 @@
 Microsoft Azure Machine Learning Scholarship Project Showcasing Challenge
 
 ## Team (Individuals):
- Dinesh Bhat
+ Dinesh Bhat 
+ Slack handle : Dinesh
 
 ## Guidelines: [https://github.com/mhmohona/MicrosoftML-ProjectShowcasing/blob/master/README.md](https://github.com/mhmohona/MicrosoftML-ProjectShowcasing/blob/master/README.md)
 
