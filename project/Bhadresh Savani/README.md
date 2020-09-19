@@ -2,7 +2,7 @@
 The goal of the Eye Exercise Application is to help increase effectiveness of eye exercise. We detect eye gaze of a user using computer vision and pretrained machine learning models. We check it with eye gaze coordianates of instructor and show user a live score of exercise effectiveness. We also want the exercise assistant to be voice enabled to instruct and motivate users for exercise.
 
 ## How we build eye gaze vectors:
-![demoVideo](/bin/gaze_detection.gif)
+![demoVideo](/project/Bhadresh%20Savani/bin/gaze_detection.gif)
 
 We have used four pretrained machine learning models from OpenVINO™ toolkit, short for Open Visual Inference and Neural network Optimization toolkit:
 
@@ -12,7 +12,7 @@ We have used four pretrained machine learning models from OpenVINO™ toolkit, s
 4. [Gaze Detection Model](https://docs.openvinotoolkit.org/latest/_models_intel_gaze_estimation_adas_0002_description_gaze_estimation_adas_0002.html): Takes head pose coordinates and eye landmark as input and predicts gaze vector
 
 ### 🏛️ The Pipeline:
-![pipeline](/imgs/pipeline.png)
+![pipeline](/project/Bhadresh%20Savani/imgs/pipeline.png)
 
 ## How we get Exercise Score:
 We compare eye gaze vector of instructor and User using cosine similarity. 
@@ -52,13 +52,13 @@ cd C:\Program Files (x86)\IntelSWTools\openvino\deployment_tools\demo\
 demo_squeezenet_download_convert_run.bat
 ```
 Above commands should give output like this image
-![optimizer_output](/imgs/image_classification_script_output_win.png)
+![optimizer_output](/project/Bhadresh%20Savani/imgs/image_classification_script_output_win.png)
 
 ## 🔎[Demo]((/bin/EyeExcerciseDemoVideo.mp4)):
-![demoVideo](/bin/EyeExcerciseDemoVideo.gif)
+![demoVideo](/project/Bhadresh%20Savani/bin/EyeExcerciseDemoVideo.gif)
 
 ### Instructions: 
-Step 1. Clone the repository using `git clone https://github.com/bhadreshpsavani/Computer-Pointer-Controller.git`
+Step 1. Clone the repository using `git clone https://github.com/bhadreshpsavani/EyeExerciseApp.git`
 
 Step 2. Create virtual environment using command `python -m venv base` in the command prompt, then activate environment using the commands below,
 ```
@@ -92,14 +92,14 @@ Command line argument information:
 - i : cam for Webcam
 
 ### Output Video:
-![demoVideo](/bin/output.gif)
+![demoVideo](/project/Bhadresh%20Savani/bin/output.gif)
 
 
 ## 📚Documentation: 
 
 ### Project Structure:
 
-![project_structure](/imgs/project_structure.png)
+![project_structure](/project/Bhadresh%20Savani/imgs/project_structure.png)
 
 **bin**: This folder has `demo.mp4` file which we are using for eye excercise video
 
