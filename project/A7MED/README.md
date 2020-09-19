@@ -168,4 +168,10 @@ probability: the probability of the image being the class indicated in the label
 ## Conclusions  
 In this project, we created a CNN model that classifies three types of chest X-ray images, where we can find normal lungs, normal pneumonia lungs, and COVID-19 pneumonia lungs. This model showed an accuracy of 87% for the test set.
 
-Also, as a first test, this model was implemented on a local server. This with the aim of being able to help detect the COVID-19 disease in an easy and fast way.
+Also, as a first test, this model was implemented on a local server. This with the aim of being able to help detect the COVID-19 disease in an easy and fast way. A sample output is included below.
+
+![POST_response](https://github.com/waqasne/MicrosoftML-ProjectShowcasing/blob/master/project/A7MED/images/visual_result.png)
+
+Finally the model was implemented on a cloud. A POST request was send to the server and a POST response was succesfully recieved. 
+
+
