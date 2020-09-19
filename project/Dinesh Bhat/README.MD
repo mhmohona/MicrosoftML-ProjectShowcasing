@@ -1,7 +1,5 @@
 
 
-![challenge](/images/Banner.png)
-
 # Automated Incident Routing System 
 
 Microsoft Azure Machine Learning Scholarship Project Showcasing Challenge
