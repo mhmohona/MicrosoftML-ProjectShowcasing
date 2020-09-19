@@ -9,5 +9,5 @@
     "service_name": "heartfailure-prediction",
     "cpu_cores": 1,
     "memory_gb": 1,
-    "webservice_uri": "http://969dabc5-de08-427e-b0b2-feffc8f8551f.uksouth.azurecontainer.io/score"
+    "webservice_uri": "http://1340b721-d646-4f9b-b888-7884277f9dc3.uksouth.azurecontainer.io/score"
 }

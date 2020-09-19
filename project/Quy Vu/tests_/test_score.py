@@ -12,8 +12,8 @@ def get_prediction(case):
 
 
 def test_single_case():
-    assert get_prediction('score_single_case') == [0]
+    assert get_prediction(case='score_single_case') == [0.5800990636602151]
 
 
 def test_multiple_case():
-    assert get_prediction('score_multiple_case') == [0, 0]
+    assert get_prediction('score_multiple_case') == [0.5800990636602151, 0.5800990636602151]

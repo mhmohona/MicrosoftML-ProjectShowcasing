@@ -33,7 +33,7 @@ def run(input_json):
         orient='index'
     ).T
 
-    prediction = MODEL.predict(features)
+    prediction = MODEL.predict_proba(features)[:, 0]
     logging.info('Prediction done for %s records', features.shape[0])
 
     return prediction.tolist()

@@ -9,6 +9,5 @@
     "serum_creatinine": [0.8, 0.8],
     "serum_sodium": [134.0, 134.0],
     "sex": [1, 1],
-    "smoking": [0, 0],
-    "time": [201, 201]
+    "smoking": [0, 0]
 }

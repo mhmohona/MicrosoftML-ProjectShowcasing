@@ -15,7 +15,7 @@ all_data = db.query('select * from dbo.patients')
 
 # Split data
 LABEL_COL = 'DEATH_EVENT'
-features = all_data.drop([LABEL_COL], axis=1)
+features = all_data.drop([LABEL_COL, 'time'], axis=1)
 labels = all_data[LABEL_COL]
 
 features_train, features_test, labels_train, labels_test = train_test_split(
