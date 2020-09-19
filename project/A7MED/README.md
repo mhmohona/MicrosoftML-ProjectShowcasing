@@ -59,7 +59,10 @@ While lungs with COVID-19 pneumonia were extracted from a publicly available Git
 
 The images used in this project of the three types of lungs were used in .jpeg format, therefore it is considered as a requirement of the application.
 
-The final dataset used had a total of 3093 images of X-ray, which have been divided into three groups and each one has three classes of X-ray images that belong to normal lungs, regular pneumonia lungs and COVID-19 pneumonia lungs. Below, the number of images used for each group is showed on Fig. 1.
+The final dataset used had a total of 3093 images of X-ray, which have been divided into three groups and each one has three classes of X-ray images that belong to normal lungs, regular pneumonia lungs and COVID-19 pneumonia lungs. In the next link is provided with the final dataset:
+[https://drive.google.com/file/d/1Cv1y4HAPcPtwyCtSZN6_k8h6UScr9XeF/view?usp=sharing](https://drive.google.com/file/d/1Cv1y4HAPcPtwyCtSZN6_k8h6UScr9XeF/view?usp=sharing)
+
+Below, the number of images used for each group is shown in Fig. 1.
 
 **Figure 1.** Number of X-ray images used in the deep learning model for COVID-19 diagnosis.  
 ![Table](https://github.com/waqasne/MicrosoftML-ProjectShowcasing/blob/master/project/A7MED/images/number_images.png)
