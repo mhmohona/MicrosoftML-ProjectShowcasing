@@ -1,0 +1,1 @@
+../test_dataset/validation/00680b4e-f7b9-11e9-b637-c8ff28027534.jpg,False 

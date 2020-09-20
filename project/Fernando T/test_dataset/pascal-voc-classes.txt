@@ -1,0 +1,48 @@
+Votos Nulos Presidente
+Votos Nulos Diputado
+Votos Blancos Presidente
+Votos Blancos Diputado
+Votos Validos Presidente
+Votos Validos Diputado
+PAN-BOL Presidente
+PAN-BOL Diputado
+MNR Presidente
+MNR Diputado
+PDC Presidente
+PDC Diputado
+21F Presidente
+21F Diputado
+MAS IPSP Presidente
+MAS IPSP Diputado
+UCS Presidente
+UCS Diputado
+MTS Presidente
+MTS Diputado
+FPV Presidente
+FPV Diputado
+CC Presidente
+CC Diputado
+Votos Nulos Presidente, Result
+Votos Nulos Diputado, Result
+Votos Blancos Presidente, Result
+Votos Blancos Diputado, Result
+Votos Validos Presidente, Result
+Votos Validos Diputado, Result
+PAN-BOL Presidente, Result
+PAN-BOL Diputado, Result
+MNR Presidente, Result
+MNR Diputado, Result
+PDC Presidente, Result
+PDC Diputado, Result
+21F Presidente, Result
+21F Diputado, Result
+MAS IPSP Presidente, Result
+MAS IPSP Diputado, Result
+UCS Presidente, Result
+UCS Diputado, Result
+MTS Presidente, Result
+MTS Diputado, Result
+FPV Presidente, Result
+FPV Diputado, Result
+CC Presidente, Result
+CC Diputado, Result
