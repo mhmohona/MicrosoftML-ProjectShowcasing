@@ -15,27 +15,31 @@ Cardiovascular diseases kill approximately 17 million people every year, and the
 
 Given the importance of the issue, in this project, I've developed a machine learning model to predict the probability of heart failure for from patient medical data using a dataset of 300 patients. In addition, to create a footprint for how potentialy this product works in practice and ensure its reproducibility, it was mainly implemented in Python (`numpy, pandas, scikit-learn, pyodbc`) and deployed using Azure suite of products (SQL Database, Azure Machine Learning).
 
-### 1.3. Methods
+### 1.3. Responsible AI
 
-#### 1.3.1. Database
+- Privacy and security: Since medical data is highly sensitive and thus need to be properly secured, the data is stored in an Azure SQL database with security roles applied, giving access to only those who are responsible of managing patient data. In addition, the database only holds non-identifiable information such as age, smoking, diabetes, etc. which ensure anonimity of patients.
+- Transparency and reliability: The importance of features can be obtained from the Random Forests algorithm, allowing cross-checking with current literature to ensure the pattern is reliable.
+- Reliability and safety: The pipeline was fully tested during development and after deployment to ensure robustness
+
+### 1.4. Methods
+
+#### 1.4.1. Database
 
 The patient data is stored in an Azure SQL database, which makes dataset management easier and scalable. The data can be queried by using either Microsoft SQL Management Server application or Python library `pyodbc`. In this project, the latter approach is utilised so the data can be then preprocessed using `numpy` and `pandas` libraries.
-
-This settings contributes to Responsible AI, as medical data is highly sensitive and thus need to be properly secured.
 
 The database schema is as follows:
 
 ![DB Schema](src/database_setup/schema.png)
 
-#### 1.3.2. Model training
+#### 1.4.2. Model training
 
 The processed data were then served as training data for a Random Forest model (`scikit-learn`). The model hyperparameters were then optimised using a grid-search method. As always, there will be a trade-off between false-positives and false-negatives. In heart failure detection, it is vital to detect potential failures and false-negatives are less costly. Therefore, the most important metrics to be optimised was selected to be Recall. As a result, the model that gives the best recall on the test set is selected to be the most performing model.
 
-#### 1.3.3. Model deployment and serving
+#### 1.4.3. Model deployment and serving
 
 After the most performing model is decided, it was then deployed on Azure machine learning as a webservice using the Azure ML Python SDK `azure-ml`. Deploying the model as a webservice allows scalable predictions to thousands of patients at the same time and makes the product integrable into other systems.
 
-### 1.4. Results
+### 1.5. Results
 
 The table below shows the results of the most performing Random Forest model. Point metrics were calculated assuming patients with a probability of heart failure >= 0.5 were considered to have a heart failure. The results translate into:
 
@@ -58,8 +62,9 @@ The table below shows the results of the most performing Random Forest model. Po
 ![Confusion matrix](./outputs/confusion_matrix.png)
 ![ROC Curve](./outputs/roc_curve.png)
 ![PR Curve](./outputs/pr_curve.png)
+![Importance](./outputs/importance.png)
 
-### 1.5. Azure resources
+### 1.6. Azure resources
 
 The following Azure resources were utilised by this project
 
