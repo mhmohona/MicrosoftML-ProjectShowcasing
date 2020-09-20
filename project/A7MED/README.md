@@ -42,6 +42,7 @@ In addition, it is also important to mention that for the development and simula
       * First model: "not normal"
       * Second model: "not pneumonia"
       * Third model: "covid-19"
+   4. However, we finally implemented a single multi-class classification model.
 4. Impact & Potential (15%) =
    1. The model could be a tool to aid physicians to diagnose COVID-19. There’s a shortage of PCR testing kits, the gold standard to diagnose COVID-19, in countries like Peru, where a blood test to detect coronavirus antibodies is used instead.
 5. Responsible AI (15%) = Evaluation of the potentiality of the project which is fair, inclusive to everyone, preserves data privacy and is secure.
