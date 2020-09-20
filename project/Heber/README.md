@@ -34,3 +34,4 @@ The [jupyter notebook](/weather-forecast-using-iot-data.ipynb) cells are divided
  5. Results.
 
 At the end of the notebook you can see what was the accuracy from the model on answering the following question: is it going to rain or not tomorrow?
+ 
