@@ -1,0 +1,4 @@
+pip
+flask
+Pillow
+opencv-python
