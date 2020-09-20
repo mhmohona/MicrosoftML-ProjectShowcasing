@@ -17,9 +17,17 @@ Given the importance of the issue, in this project, I've developed a machine lea
 
 ### 1.3. Methods
 
-The patient data is stored in an Azure SQL database, which makes the dataset manageable and scalable. The data can be queried by using either Microsoft SQL Management Server application or Python library `pyodbc`. In this project, the latter approach is utilised so the data can be then preprocessed using `numpy` and `pandas` libraries.
+#### 1.3.1. Database
+
+The patient data is stored in an Azure SQL database, which makes dataset management easier and scalable. The data can be queried by using either Microsoft SQL Management Server application or Python library `pyodbc`. In this project, the latter approach is utilised so the data can be then preprocessed using `numpy` and `pandas` libraries.
+
+![DB Schema](src/database_setup/schema.png)
+
+#### 1.3.2. Model training
 
 The processed data were then served as training data for a Random Forest model (`scikit-learn`). The model hyperparameters were then optimised using a grid-search method. As always, there will be a trade-off between false-positives and false-negatives. In heart failure detection, it is vital to detect potential failures and false-negatives are less costly. Therefore, the most important metrics to be optimised was selected to be Recall. As a result, the model that gives the best recall on the test set is selected to be the most performing model.
+
+#### 1.3.3. Model deployment and serving
 
 After the most performing model is decided, it was then deployed on Azure machine learning as a webservice using the Azure ML Python SDK `azure-ml`. Deploying the model as a webservice allows scalable predictions to thousands of patients at the same time and makes the product integrable into other systems.
 
@@ -46,6 +54,12 @@ The table below shows the results of the most performing Random Forest model. Po
 ![Confusion matrix](./outputs/confusion_matrix.png)
 ![ROC Curve](./outputs/roc_curve.png)
 ![PR Curve](./outputs/pr_curve.png)
+
+### 1.5. Azure resources
+
+The following Azure resources were utilised by this project
+
+![Resources](src/database_setup/resources.png)
 
 ## 2. Demo
 
@@ -111,10 +125,47 @@ If you want to update dev environment: Run the `./src/initialise.py` first then 
 conda env update --prefix ./envs_dev --file conda_env_test.yaml
 ```
 
-## 5. Future work
+## 5. Project implementation
+
+```
+|   config.json         <- Azure workspace config
+|   metadata.json       <- Deployment metadata
+|   requirements.txt
+|   conda_env.yaml      <- conda env for deployment
+|   conda_env_test.yaml <- conda env for development
+├── data                <- Data for EDA and model evaluation
+|
+├── database_setup      <- Setting up the SQL database
+|   ├── create_schema.sql   <- Create the table schema
+│   └── initial_import.sql  <- Dataset import
+│
+├── demo                <- Recording of application demo
+|
+├── src
+|   ├── deploy.py       <- Deploy the ML model as an Azure web service
+|   ├── evaluate.ipynb  <- Model evaluation
+│   ├── get_data.py     <- Get data for model evaluation
+|   └── initialise.py   <- Initialise workspace and environment for development and deployment
+|   ├── main.py         <- Application for user
+|   ├── score.py        <- Model entry script
+|   ├── train.py        <- Query the data from the SQL database, then train and register the ML model on Azure ML
+|   └── utils.py        <- Utility functions
+│
+├── models              <- Hold the best obtained model
+|
+├── outputs             <- Model evaluation output
+|   ├── test
+|   └── train
+|
+└── tests_              <- For testing
+```
+
+## 6. Future work
 
 Since the main aim of this project is to focus on developing and deploying a machine learning product, I have skipped out a large part of the data science process (exploratory data analysis, hyperparameter tuning, feature selection, etc.). This was also due to limited amount of time and resources as I'm working full time and also work on this project solo. I believe a lot could have been done to improve the machine learning part. The 3 most important components are as follows:
 
 - More sophisticated hyperparameter tuning (Bayesian search, AutoML)
 - Feature selection based on feature importance
 - Apply interpretation methods (e.g. SHAP) to understand the patient's condition and suggest potential treatment
+
+
