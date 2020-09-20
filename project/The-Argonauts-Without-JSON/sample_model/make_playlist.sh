@@ -1,0 +1,1 @@
+python3 inference.py --artist_name Eminem
