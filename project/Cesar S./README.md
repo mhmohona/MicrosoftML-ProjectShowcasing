@@ -16,7 +16,7 @@ The information available in that site includes price of Gold in many currencies
 ## Dataset Preparation
 In our project we took a subset of the dataset available.
 We worked with the Daily Time Series of Gold in U.S. dollars (USD) from 2017 to 2020.
-Our working dataset was the file [Precio_2017_2020.csv](Precio_2017_2020.csv).  
+Our working dataset was the file [./Precio_2017_2020.csv](Precio_2017_2020.csv).  
 That dataset was normalized using a MinMaxScaler() from sklearn.preprocessing. 
 
 ## Model Selection
@@ -32,23 +32,23 @@ Test Data:  2020-04-16 to 2020-08-28  [ 96 points]
 The project was implemented using a Jupyter notebook, which is available in current repository.
 
 A screenshot of the Jupyter Notebook running locally on our laptops:  
-![Jupyter](/images/Jupyter_local_02.png)  
+![Jupyter](./images/Jupyter_local_02.png)  
 
 ## Implementation in Azure - Notebook
 
 As a second step the project was implemented in Microsoft Azure Machine Learning, using a Notebook.
 A screenshot of the Azure ML Notebook running on the cloud:  
-![Notebook](/images/Jupyter_Azure_02.png)   
+![Notebook](./images/Jupyter_Azure_02.png)   
 
 ## Implementation in Azure - Designer (preview)
 
 As a third step we implemented some steps of the model using Azure ML Designer (preview).
 A screenshot of the Data Flow Pipeline running on the cloud: 
-![Designer](/images/Pipeline_Azure_01.png)   
+![Designer](./images/Pipeline_Azure_01.png)   
 
 ## Model Evaluation
 The proposed model when evaluating its performance against the test data, made a very good prediction of the future values, as can be seen from the following plot:  
-![Results](/images/Prediction_01.png) 
+![Results](./images/Prediction_01.png) 
 
 ## Model Conclusions
 The purpose of this project was to test the viability of predicting future values of a Time Series, usign Azure Cloud based tools.
