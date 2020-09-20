@@ -1,0 +1,543 @@
+<annotation>
+    <folder>uploadedimagescomputo</folder>
+    <filename>1da06fc2-f7de-11e9-b23f-c8ff28027534.jpg</filename>
+    <path>/home/stanlee321/Desktop/2019/full_dataset/uploadedimagescomputo/1da06fc2-f7de-11e9-b23f-c8ff28027534.jpg</path>
+    <source>
+        <database>Unknown</database>
+    </source>
+    <size>
+        <width>1600</width>
+        <height>2500</height>
+        <depth>3</depth>
+    </size>
+    <segmented>0</segmented>
+    <object>
+        <name>Votos Nulos Presidente</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>43</xmin>
+            <ymin>799</ymin>
+            <xmax>304</xmax>
+            <ymax>857</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>Votos Nulos Presidente, Result</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>353</xmin>
+            <ymin>799</ymin>
+            <xmax>519</xmax>
+            <ymax>857</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>Votos Nulos Diputado</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>583</xmin>
+            <ymin>797</ymin>
+            <xmax>847</xmax>
+            <ymax>856</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>Votos Nulos Diputado, Result</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>893</xmin>
+            <ymin>797</ymin>
+            <xmax>1062</xmax>
+            <ymax>856</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>Votos Blancos Presidente</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>42</xmin>
+            <ymin>734</ymin>
+            <xmax>303</xmax>
+            <ymax>793</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>Votos Blancos Presidente, Result</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>352</xmin>
+            <ymin>734</ymin>
+            <xmax>518</xmax>
+            <ymax>793</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>Votos Blancos Diputado</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>583</xmin>
+            <ymin>732</ymin>
+            <xmax>847</xmax>
+            <ymax>791</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>Votos Blancos Diputado, Result</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>893</xmin>
+            <ymin>732</ymin>
+            <xmax>1062</xmax>
+            <ymax>791</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>Votos Validos Presidente</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>41</xmin>
+            <ymin>632</ymin>
+            <xmax>303</xmax>
+            <ymax>690</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>Votos Validos Presidente, Result</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>351</xmin>
+            <ymin>632</ymin>
+            <xmax>518</xmax>
+            <ymax>690</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>Votos Validos Diputado</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>582</xmin>
+            <ymin>630</ymin>
+            <xmax>847</xmax>
+            <ymax>689</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>Votos Validos Diputado, Result</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>892</xmin>
+            <ymin>630</ymin>
+            <xmax>1062</xmax>
+            <ymax>689</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>PAN-BOL Presidente</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>13</xmin>
+            <ymin>548</ymin>
+            <xmax>333</xmax>
+            <ymax>607</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>PAN-BOL Presidente, Result</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>353</xmin>
+            <ymin>548</ymin>
+            <xmax>513</xmax>
+            <ymax>607</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>PAN-BOL Diputado</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>553</xmin>
+            <ymin>546</ymin>
+            <xmax>877</xmax>
+            <ymax>605</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>PAN-BOL Diputado, Result</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>893</xmin>
+            <ymin>546</ymin>
+            <xmax>1057</xmax>
+            <ymax>605</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>MNR Presidente</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>13</xmin>
+            <ymin>485</ymin>
+            <xmax>333</xmax>
+            <ymax>544</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>MNR Presidente, Result</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>353</xmin>
+            <ymin>485</ymin>
+            <xmax>513</xmax>
+            <ymax>544</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>MNR Diputado</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>552</xmin>
+            <ymin>484</ymin>
+            <xmax>877</xmax>
+            <ymax>542</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>MNR Diputado, Result</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>892</xmin>
+            <ymin>484</ymin>
+            <xmax>1057</xmax>
+            <ymax>542</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>PDC Presidente</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>13</xmin>
+            <ymin>421</ymin>
+            <xmax>333</xmax>
+            <ymax>480</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>PDC Presidente, Result</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>353</xmin>
+            <ymin>421</ymin>
+            <xmax>513</xmax>
+            <ymax>480</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>PDC Diputado</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>552</xmin>
+            <ymin>420</ymin>
+            <xmax>876</xmax>
+            <ymax>479</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>PDC Diputado, Result</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>892</xmin>
+            <ymin>420</ymin>
+            <xmax>1056</xmax>
+            <ymax>479</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>21F Presidente</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>13</xmin>
+            <ymin>359</ymin>
+            <xmax>333</xmax>
+            <ymax>417</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>21F Presidente, Result</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>353</xmin>
+            <ymin>359</ymin>
+            <xmax>513</xmax>
+            <ymax>417</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>21F Diputado</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>552</xmin>
+            <ymin>357</ymin>
+            <xmax>877</xmax>
+            <ymax>416</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>21F Diputado, Result</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>892</xmin>
+            <ymin>357</ymin>
+            <xmax>1057</xmax>
+            <ymax>416</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>MAS IPSP Presidente</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>13</xmin>
+            <ymin>297</ymin>
+            <xmax>332</xmax>
+            <ymax>355</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>MAS IPSP Presidente, Result</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>353</xmin>
+            <ymin>297</ymin>
+            <xmax>512</xmax>
+            <ymax>355</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>MAS IPSP Diputado</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>552</xmin>
+            <ymin>295</ymin>
+            <xmax>876</xmax>
+            <ymax>354</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>MAS IPSP Diputado, Result</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>892</xmin>
+            <ymin>295</ymin>
+            <xmax>1056</xmax>
+            <ymax>354</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>UCS Presidente</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>13</xmin>
+            <ymin>234</ymin>
+            <xmax>332</xmax>
+            <ymax>292</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>UCS Presidente, Result</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>353</xmin>
+            <ymin>234</ymin>
+            <xmax>512</xmax>
+            <ymax>292</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>UCS Diputado</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>552</xmin>
+            <ymin>232</ymin>
+            <xmax>876</xmax>
+            <ymax>291</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>UCS Diputado, Result</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>892</xmin>
+            <ymin>232</ymin>
+            <xmax>1056</xmax>
+            <ymax>291</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>MTS Presidente</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>13</xmin>
+            <ymin>172</ymin>
+            <xmax>332</xmax>
+            <ymax>230</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>MTS Presidente, Result</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>353</xmin>
+            <ymin>172</ymin>
+            <xmax>512</xmax>
+            <ymax>230</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>MTS Diputado</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>552</xmin>
+            <ymin>170</ymin>
+            <xmax>876</xmax>
+            <ymax>229</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>MTS Diputado, Result</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>892</xmin>
+            <ymin>170</ymin>
+            <xmax>1056</xmax>
+            <ymax>229</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>FPV Presidente</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>13</xmin>
+            <ymin>109</ymin>
+            <xmax>332</xmax>
+            <ymax>167</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>FPV Presidente, Result</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>353</xmin>
+            <ymin>109</ymin>
+            <xmax>512</xmax>
+            <ymax>167</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>FPV Diputado</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>552</xmin>
+            <ymin>107</ymin>
+            <xmax>876</xmax>
+            <ymax>166</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>FPV Diputado, Result</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>892</xmin>
+            <ymin>107</ymin>
+            <xmax>1056</xmax>
+            <ymax>166</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>CC Presidente</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>12</xmin>
+            <ymin>47</ymin>
+            <xmax>332</xmax>
+            <ymax>105</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>CC Presidente, Result</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>352</xmin>
+            <ymin>47</ymin>
+            <xmax>512</xmax>
+            <ymax>105</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>CC Diputado</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>551</xmin>
+            <ymin>46</ymin>
+            <xmax>876</xmax>
+            <ymax>104</ymax>
+        </bndbox>
+    </object>    <object>
+        <name>CC Diputado, Result</name>
+        <pose>Unspecified</pose>
+        <truncated>0</truncated>
+        <difficult>0</difficult>
+        <bndbox>
+            <xmin>891</xmin>
+            <ymin>46</ymin>
+            <xmax>1056</xmax>
+            <ymax>104</ymax>
+        </bndbox>
+    </object>
+</annotation>
