@@ -8,4 +8,6 @@ In this project, Zoé Goey & Lane endeavor to compare the Python Record Linkage 
 
 Which machine learning  method is to be prefered is something that needs further investigation. DeepMatcher scored best, but the training effort was considerable and would probably be an overkill for easy data sets. Classical supervised machine learning gave comparable results in a fraction of the time needed by deep learning, and one of the unsupervised methods showed a very decent performance without requiring any labeling. So what to choose is probably dataset- and situation-dependent and would be a nice topic for a subsequent project.
 
+To run the notebook (or in pacticular DeepMatcher), one needs a high-end machine with a good GPU and sufficient memory, so the easiest way to run it is on Google Colab. Just copy the entire contents of this directory into a directory named EntityMatching in the root of your Google Drive or correct the paths in the notebook so that the input files can be found.
+
 
