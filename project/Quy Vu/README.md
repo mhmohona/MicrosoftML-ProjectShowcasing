@@ -11,7 +11,9 @@ Email: xquy.vu@gmail.com
 
 ### 1.2. Project motivation
 
-Cardiovascular diseases kill approximately 17 million people every year, and they mainly exhibit as myocardial infarctions and heart failures. Heart failure occurs when the heart cannot pump enough blood to meet the needs of the body. Given the availability of electronic medical records, it is potential to perform analysis to highlight patterns and apply machine learning methods to predict heart failure, which is not easily achievable by doctors, or at least, assist them in diagnosis and/or provide recommendation to patients or medical staffs to decrease the risk of heart failure.
+Cardiovascular diseases kill approximately 17 million people every year, and they mainly exhibit as myocardial infarctions and heart failures. Heart failure occurs when the heart cannot pump enough blood to meet the needs of the body.
+
+Given the availability of electronic medical records, it is potential to perform analysis to highlight patterns and apply machine learning methods to predict heart failure. By having access to a reliable and accurate prediction systems doctors and the personnel in charge can be assisted in diagnosis and providing recommendations to patients to decrease the risk of heart failure.
 
 Given the importance of the issue, in this project, I've developed a machine learning model to predict the probability of heart failure for from patient medical data using a dataset of 300 patients. In addition, to create a footprint for how potentialy this product works in practice and ensure its reproducibility, it was mainly implemented in Python (`numpy, pandas, scikit-learn, pyodbc`) and deployed using Azure suite of products (SQL Database, Azure Machine Learning).
 
@@ -176,4 +178,3 @@ Since the main aim of this project is to focus on developing and deploying a mac
 - More sophisticated hyperparameter tuning (Bayesian search, AutoML)
 - Feature selection based on feature importance
 - Apply interpretation methods (e.g. SHAP) to understand the patient's condition and suggest potential treatment
-
