@@ -1,0 +1,13 @@
+{
+    "env_name": "heart-failure",
+    "model_file": "best_model.pkl",
+    "model_path": "./models/best_model.pkl",
+    "experiment_name": "heartfailure_randomforest_greedy",
+    "model_name": "heartfailure_randomforest_greedy",
+    "model_description": "Heart failure predictor with RF",
+    "service_description": "Heart failure predictor web service",
+    "service_name": "heartfailure-prediction",
+    "cpu_cores": 1,
+    "memory_gb": 1,
+    "webservice_uri": "http://1340b721-d646-4f9b-b888-7884277f9dc3.uksouth.azurecontainer.io/score"
+}
