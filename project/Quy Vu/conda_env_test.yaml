@@ -1,13 +1,19 @@
-# Conda environment specification. The dependencies defined in this file will
-# be automatically provisioned for runs with userManagedDependencies=False.
+# Conda environment specification. The dependencies defined in this file will
 
-# Details about the Conda environment file format:
-# https://conda.io/docs/user-guide/tasks/manage-environments.html#create-env-file-manually
+# be automatically provisioned for runs with userManagedDependencies=False.
+
+
+# Details about the Conda environment file format:
+
+# https://conda.io/docs/user-guide/tasks/manage-environments.html#create-env-file-manually
+
 
 name: project_environment
 dependencies:
-  # The python interpreter version.
-  # Currently Azure ML only supports 3.5.2 and later.
+  # The python interpreter version.
+
+  # Currently Azure ML only supports 3.5.2 and later.
+
 - python=3.6.2
 
 - pip:
@@ -21,6 +27,8 @@ dependencies:
 - pytest
 - pylint
 - requests
+- ipykernel
+- matplotlib
 channels:
 - anaconda
 - conda-forge

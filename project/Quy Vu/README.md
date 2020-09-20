@@ -25,13 +25,27 @@ After the most performing model is decided, it was then deployed on Azure machin
 
 ### 1.4. Results
 
-The table below shows the results of the most performing Random Forest model. The results translate into out of 100 predictions, 74 of them are correct, and out of 100 patients with potential heart failure, 42 of them were detected by the ML model.
+The table below shows the results of the most performing Random Forest model. Point metrics were calculated assuming patients with a probability of heart failure >= 0.5 were considered to have a heart failure. The results translate into:
 
-| Metric   | Score |
-| -------- | ----- |
-| Accuracy | 0.74  |
-| Recall   | 0.42  |
-| ROC AUC  | 0.83  |
+- Out of 100 predictions, 83 of them are correct.
+- Out of 100 patients with potential heart failure, 58 of them were detected by the ML model.
+- Out of 100 patients predicted as risk having a heart failure, 83 of them actually do/did/will.
+
+| Metric              | Score |
+| ------------------- | ----- |
+| ROC AUC             | 0.90  |
+| AUPRC               | 0.62  |
+| Accuracy            | 0.83  |
+| Precision           | 0.83  |
+| Recall              | 0.58  |
+| F1-score            | 0.69  |
+| True Positive Rate: | 0.58  |
+| True Negative Rate: | 0.94  |
+| Log loss            | 0.43  |
+
+![Confusion matrix](./outputs/confusion_matrix.png)
+![ROC Curve](./outputs/roc_curve.png)
+![PR Curve](./outputs/pr_curve.png)
 
 ## 2. Demo
 
