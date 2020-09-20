@@ -1,6 +1,6 @@
 # Predicting heart failure with machine learning
 
-This project utilises Azure suite of products to provide prediction for heart failure.
+This project utilises Python and Azure suite of products to provide prediction for heart failure.
 
 ## 1. Overview
 
@@ -11,11 +11,11 @@ Email: xquy.vu@gmail.com
 
 ### 1.2. Project motivation
 
-Cardiovascular diseases kill approximately 17 million people globally every year, and they mainly exhibit as myocardial infarctions and heart failures. Heart failure  occurs when the heart cannot pump enough blood to meet the needs of the body. Available electronic medical records of patients quantify symptoms, body features, and clinical laboratory test values, which can be used to perform biostatistics analysis aimed at highlighting patterns and correlations otherwise undetectable by medical doctors. Machine learning, in particular, can predict patients’ survival from their data and can individuate the most important features among those included in their medical records.
-
-### 1.3. Methods
+Cardiovascular diseases kill approximately 17 million people every year, and they mainly exhibit as myocardial infarctions and heart failures. Heart failure occurs when the heart cannot pump enough blood to meet the needs of the body. Given the availability of electronic medical records, it is potential to perform analysis to highlight patterns and apply machine learning methods to predict heart failure, which is not easily achievable by doctors, or at least, assist them in diagnosis and/or provide recommendation to patients or medical staffs to decrease the risk of heart failure.
 
 Given the importance of the issue, in this project, I've developed a machine learning model to predict the probability of heart failure for from patient medical data using a dataset of 300 patients. In addition, to create a footprint for how potentialy this product works in practice and ensure its reproducibility, it was mainly implemented in Python (`numpy, pandas, scikit-learn, pyodbc`) and deployed using Azure suite of products (SQL Database, Azure Machine Learning).
+
+### 1.3. Methods
 
 The patient data is stored in an Azure SQL database, which makes the dataset manageable and scalable. The data can be queried by using either Microsoft SQL Management Server application or Python library `pyodbc`. In this project, the latter approach is utilised so the data can be then preprocessed using `numpy` and `pandas` libraries.
 
@@ -67,7 +67,7 @@ Run the following bash command and input patient(s) data such as diabetes, smoki
 python ./src/main.py
 ```
 
-### 3.1. Using python script
+### 3.1. Using a Python script
 
 You can get the probability that someone will have a heart failure by sending a POST request with the patient's details to the Azure ML endpoint.
 Example is as follows. Note that the endpoint may become unavailable should I decide to shut it down.
