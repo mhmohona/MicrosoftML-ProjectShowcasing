@@ -1,4 +1,10 @@
 # Beat the "heads or tails" strategy in the weather forecast
+
+**Project name**: Beat the "heads or tails".
+**Team name**: DataWeather4Cast.
+**Used Technology**: RandomForest, Python, REST API, Matplotlib, Seaborn, Pandas, Numpy and others libraries;
+**Who the project is for**: This project demonstrates that sometimes information from sensors and systems can help to solve problems outside or far from them. It also shows the complete process from collecting data to predicting results. I hope anyone seeking for this type of knowledge can learn something with it; 
+
 The goal from this project is to evaluate how temperature and humidity sensors from a data center is good for predicting rain precipitation.
 
 When I was a kid there was no google or other modern tools to search for or get information about the weather forecast.
