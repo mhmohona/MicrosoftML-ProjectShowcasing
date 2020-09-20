@@ -19,7 +19,8 @@ class FaceTaggingModel:
             if keypoints_df is None:
                 raise ValueError("You have to use dataframe is use_docker = False")
             else:
-                keypoints_df = keypoints_df.set_index('Unnamed: 0')
+                if 'Unnamed: 0' in keypoints_df.columns:
+                    keypoints_df = keypoints_df.set_index('Unnamed: 0')
 
         self._df = keypoints_df
         self._silent = False

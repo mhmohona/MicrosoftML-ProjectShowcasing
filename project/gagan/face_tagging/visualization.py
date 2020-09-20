@@ -21,7 +21,7 @@ def visualize(matched_pairs: dict, images_path: str):
         fig.subplots_adjust(hspace=0.5)
         for idx, image in enumerate(images):
             img = plt.imread(os.path.join(images_path, image))
-            ax = fig.add_subplot(n_rows, idx+1, idx+1)
+            ax = fig.add_subplot(n_rows, idx+3, idx+1)
             ax.title.set_text(group)
             ax.set_xticklabels([])
             ax.set_yticklabels([])
