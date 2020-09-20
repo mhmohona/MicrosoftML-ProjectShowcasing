@@ -43,12 +43,21 @@ $ jupyter notebook Main.ipynb
 A pretrained Resnet Model is used to extract 128D facial landmark points.
 ![feature_extraction_process](resources/workflow/feature_extraction_process.PNG)
 ### 2. Apply Algorithm
-KNN algorithm is used to find the similar group.
-![KNN Algorithm](resources/workflow/knn_algorithm.PNG)
+KNN algorithm is used to find the similar group.<br>
+![KNN Algorithm](resources/workflow/knn_algorithm.PNG)<br>
 The process works in this manner.<br>
 1. Train a KNN model on first image (128D landmark points).
 2. Predict on rest of the images.
 3. If any image falls in 0.5 of neighbourhood then they are similar faces.
 4. Repeat the step until all the images are covered.
-5. Display all the groups
+5. Display all the groups<br>
 ![feature_extraction_process](resources/workflow/groups.PNG)
+<br>
+
+![feature_extraction_process](resources/workflow/diag.png)
+
+
+## Tech Stack Used
+1. Docker (for API deployment)
+2. Python
+3. Libraries - dlib, OpenCV, matplotlib, sklearn
