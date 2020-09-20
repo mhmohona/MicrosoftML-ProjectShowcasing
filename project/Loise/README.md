@@ -1,7 +1,7 @@
 
 Car insurance sales prediction
 ## Description
-#### Car insurance sales prediction using Zimnat car insurance data as a way of applying the concepts learnt in the microsoft azure for Ml foundations course
+#### Car insurance sales prediction using Zimnat car insurance data as a way of applying the concepts learnt in the microsoft azure for Ml foundations course. Insurance companies around the world operate in a very competitive environment. With various aspects of data collected from millions of customers, For an industry where customer acquisition and retention are equally important, and the former being a more expensive process, insurance companies rely on data to understand customer behavior to prevent retention. Thus knowing whether a customer is possibly going to switch beforehand gives Insurance companies an opportunity to come up with strategies to prevent it from actually happening.
 
 ## Features
  The model predicts the sales of car insurance packages using past sales and user info
