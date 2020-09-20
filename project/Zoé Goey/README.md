@@ -4,7 +4,7 @@ During the Azure Machine Learning Scholarship program, Lane posed a question on 
 
 We decided to see for ourselves.
 
-In this project, Zoé Goey & Lane endeavor to compare the Python Record Linkage Toolkit (PRLT) to DeepMatcher for entity matching. We use the DBLP-ACM dataset downloaded from [https://dbs.uni-leipzig.de/research/projects/object_matching/benchmark_datasets_for_entity_resolution](https://dbs.uni-leipzig.de/research/projects/object_matching/benchmark_datasets_for_entity_resolution), which includes two tables with . This project was done in Google Colab and targets clients who wish to develop an entity matching algorithm for a new product. The PRLT achieved a best score using the Naive Bayes classifier and only slightly underperformed DeepMatcher.
+In this project, Zoé Goey & Lane endeavor to compare the Python Record Linkage Toolkit (PRLT) to DeepMatcher for entity matching. We use the DBLP-ACM dataset downloaded from the [DataBase Group Leipzig ](https://dbs.uni-leipzig.de/research/projects/object_matching/benchmark_datasets_for_entity_resolution), which includes two tables with 2616 and 2294 rows, respectively. This project was done in Google Colab and targets clients who wish to develop an entity matching algorithm for a new product. The PRLT achieved a best score using the Naive Bayes classifier and only slightly underperformed DeepMatcher.
 
 We performed feature engineering on PRLT as per the site's suggestions for dataset FEBRL4 but since DeepMatcher has built-in feature engineering functions, we just let it do the feature engineering automatically. Therefore, the feature vectors used were not the same.
 
