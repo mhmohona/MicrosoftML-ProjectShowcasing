@@ -30,7 +30,6 @@ Team **#Sg_Spanish**: </br>
 4. [Analysis](#analysis)
 5. [Applying Designer](#applyingDesigner)
 6. [Results and Discussion](#results)
-7. [Conclusion](#conclusion)
 </details>
 
 ## Introduction: Business Problem
@@ -104,9 +103,5 @@ If the predicted value is > 0.5 it is real else it is fake But in our example th
 </p>
 <br>
 
-## Conclusion
-
-<a name="#conclusion"></a>
-<summary>Show/Hide</summary>
-<br>
-
+### Link FakeNewsClassifierPS.ipynb
+https://github.com/ketcx/fake-news-classifier/blob/master/FakeNewsClassifierPS.ipynb
