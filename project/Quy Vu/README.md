@@ -21,6 +21,10 @@ Given the importance of the issue, in this project, I've developed a machine lea
 
 The patient data is stored in an Azure SQL database, which makes dataset management easier and scalable. The data can be queried by using either Microsoft SQL Management Server application or Python library `pyodbc`. In this project, the latter approach is utilised so the data can be then preprocessed using `numpy` and `pandas` libraries.
 
+This settings contributes to Responsible AI, as medical data is highly sensitive and thus need to be properly secured.
+
+The database schema is as follows:
+
 ![DB Schema](src/database_setup/schema.png)
 
 #### 1.3.2. Model training
@@ -167,5 +171,4 @@ Since the main aim of this project is to focus on developing and deploying a mac
 - More sophisticated hyperparameter tuning (Bayesian search, AutoML)
 - Feature selection based on feature importance
 - Apply interpretation methods (e.g. SHAP) to understand the patient's condition and suggest potential treatment
-
 
