@@ -1,4 +1,4 @@
-# Deep learning model for COVID-19 diagnosis using chest X-ray images
+# Chest X-ray image classification for COVID-19 and pneumonia using Deep CNN
 Microsoft Azure Machine Learning Scholarship Project Showcasing Challenge
 
 ## Team:
