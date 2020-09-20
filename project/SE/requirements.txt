@@ -1,0 +1,2 @@
+https://services.foresights.it/odata-feed.svc
+https://github.com/Foresights-IT/MicrosoftML/releases/download/en_core_web_md-1.2.3/en_core_web_md-1.2.3.tar.gz#egg=en_core_web_md
