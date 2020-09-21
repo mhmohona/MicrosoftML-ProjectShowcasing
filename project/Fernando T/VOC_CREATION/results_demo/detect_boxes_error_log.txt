@@ -1,0 +1,4 @@
+/home/stanlee321/Desktop/2019/full_dataset/uploadedimagescomputo/9556942a-f7c5-11e9-9952-c8ff28027534.jpg,False 
+/home/stanlee321/Desktop/2019/full_dataset/uploadedimagescomputo/1d05e865-f7ba-11e9-a066-c8ff28027534.jpg,False 
+/home/stanlee321/Desktop/2019/full_dataset/uploadedimagescomputo/aef1f6ac-f7c7-11e9-83a8-c8ff28027534.jpg,False 
+/home/stanlee321/Desktop/2019/full_dataset/uploadedimagescomputo/091c3add-f7d3-11e9-a413-c8ff28027534.jpg,False 
