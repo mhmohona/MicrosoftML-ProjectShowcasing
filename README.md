@@ -1,5 +1,3 @@
-
-
 ![challenge](/image/challenge.jpg)
 
 # Microsoft Azure Machine Learning Scholarship Project Showcasing Challenge
