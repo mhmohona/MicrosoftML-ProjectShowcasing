@@ -1,4 +1,4 @@
-# Deep learning model for COVID-19 diagnosis using chest X-ray images
+# Chest X-ray image classification for COVID-19 and pneumonia using Deep CNN
 Microsoft Azure Machine Learning Scholarship Project Showcasing Challenge
 
 ## Team:
@@ -42,6 +42,7 @@ In addition, it is also important to mention that for the development and simula
       * First model: "not normal"
       * Second model: "not pneumonia"
       * Third model: "covid-19"
+   4. However, we finally implemented a single multi-class classification model.
 4. Impact & Potential (15%) =
    1. The model could be a tool to aid physicians to diagnose COVID-19. There’s a shortage of PCR testing kits, the gold standard to diagnose COVID-19, in countries like Peru, where a blood test to detect coronavirus antibodies is used instead.
 5. Responsible AI (15%) = Evaluation of the potentiality of the project which is fair, inclusive to everyone, preserves data privacy and is secure.
@@ -59,7 +60,10 @@ While lungs with COVID-19 pneumonia were extracted from a publicly available Git
 
 The images used in this project of the three types of lungs were used in .jpeg format, therefore it is considered as a requirement of the application.
 
-The final dataset used had a total of 3093 images of X-ray, which have been divided into three groups and each one has three classes of X-ray images that belong to normal lungs, regular pneumonia lungs and COVID-19 pneumonia lungs. Below, the number of images used for each group is showed on Fig. 1.
+The final dataset used had a total of 3093 images of X-ray, which have been divided into three groups and each one has three classes of X-ray images that belong to normal lungs, regular pneumonia lungs and COVID-19 pneumonia lungs. In the next link is provided with the final dataset:
+[https://drive.google.com/file/d/1Cv1y4HAPcPtwyCtSZN6_k8h6UScr9XeF/view?usp=sharing](https://drive.google.com/file/d/1Cv1y4HAPcPtwyCtSZN6_k8h6UScr9XeF/view?usp=sharing)
+
+Below, the number of images used for each group is shown in Fig. 1.
 
 **Figure 1.** Number of X-ray images used in the deep learning model for COVID-19 diagnosis.  
 ![Table](https://github.com/waqasne/MicrosoftML-ProjectShowcasing/blob/master/project/A7MED/images/number_images.png)
@@ -168,4 +172,10 @@ probability: the probability of the image being the class indicated in the label
 ## Conclusions  
 In this project, we created a CNN model that classifies three types of chest X-ray images, where we can find normal lungs, normal pneumonia lungs, and COVID-19 pneumonia lungs. This model showed an accuracy of 87% for the test set.
 
-Also, as a first test, this model was implemented on a local server. This with the aim of being able to help detect the COVID-19 disease in an easy and fast way.
+Also, as a first test, this model was implemented on a local server. This with the aim of being able to help detect the COVID-19 disease in an easy and fast way. A sample output is included below.
+
+![POST_response](https://github.com/waqasne/MicrosoftML-ProjectShowcasing/blob/master/project/A7MED/images/visual_result.png)
+
+Finally the model was implemented on a cloud. A POST request was send to the server and a POST response was succesfully recieved. 
+
+
