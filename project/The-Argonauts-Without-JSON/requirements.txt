@@ -1,0 +1,11 @@
+pytest==3.5.0
+click>=6.7
+joblib>=0.14.1
+numpy>=1.18.1
+pandas>=1.0.1
+fastapi==0.61.1
+loguru==0.5.2
+pydantic==1.6.1
+scikit_learn>=0.23.2
+secrets==1.0.2
+starlette==0.13.8

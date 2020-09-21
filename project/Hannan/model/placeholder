@@ -1,0 +1,93 @@
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+import os
+import warnings
+
+from keras.layers import Input, Embedding, Flatten, Dot, Dense, Concatenate
+from keras.models import Model
+
+warnings.filterwarnings('ignore')
+%matplotlib inline
+
+dataset = pd.read_csv('/data/ratings.csv')
+
+
+from sklearn.model_selection import train_test_split
+train, test = train_test_split(dataset, test_size=0.30, random_state=42)
+
+n_users = len(dataset.user_id.unique())
+n_users
+
+
+n_books = len(dataset.book_id.unique())
+n_books
+
+
+import tensorflow.keras as tf
+
+#Book input network
+## First we create an input layer to accept a 1 D array of book IDs
+input_books = tf.layers.Input(shape=[1])
+## Second we create an embedding layer (hidden layer of a network) with the shape of (number of unique books + 1,5)
+## The second dimension (5), is an arbitrary dimension we chose. (how large we want the embedding layer to be)
+## we append the input layer to the end of the book embedding layer. 
+## We want by that passing the output of the input layer to the embedding layer.
+embed_books = tf.layers.Embedding(n_books + 1,15)(input_books)
+## Flattening a tensor means to remove all of the dimensions except for one.
+books_out = tf.layers.Flatten()(embed_books)
+
+#user input network
+input_users = tf.layers.Input(shape=[1])
+embed_users = tf.layers.Embedding(n_users + 1,15)(input_users)
+users_out = tf.layers.Flatten()(embed_users)
+
+##concatenate line, we simply concatenate or join both the books and the user embedding layer together,
+conc_layer = tf.layers.Concatenate()([books_out, users_out])
+##add a single dense layer with 128 nodes on top of it. 
+x = tf.layers.Dense(128, activation='relu')(conc_layer)
+##For the final layer of the network, we use a single node, 
+##because we’re predicting the ratings given to each book, and that requires just a single node.
+x_out = x = tf.layers.Dense(1, activation='relu')(x)
+model = tf.Model([input_books, input_users], x_out)
+
+
+opt = tf.optimizers.Adam(learning_rate=0.001)
+model.compile(optimizer=opt, loss='mean_squared_error')
+model.summary()
+
+
+history = model.fit([train.book_id, train.user_id], train.rating, 
+                 batch_size=64, 
+                 epochs=5, 
+                 verbose=1,
+                 validation_data=([test.book_id, test.user_id], test.rating))
+
+train_loss = history.history['loss']
+val_loss = history.history['val_loss']
+plt.plot(train_loss, color='r', label='Train Loss')
+plt.plot(val_loss, color='b', label='Validation Loss')
+plt.title("Train and Validation Loss Curve")
+plt.legend()
+plt.show()
+
+
+book_data = np.array(list(set(dataset.book_id)))
+book_data
+
+user = np.array([100 for i in range(len(list(set(dataset.book_id))))])
+user
+
+
+pred = model.predict([book_data, user])
+pred
+
+
+pred = pred.reshape(-1) #reshape to single dimension
+pred_ids = (-pred).argsort()[0:5]
+pred_ids
+
+books  = pd.read_csv('/data/books.csv')
+books.head()
+
+books.iloc[pred_ids]
