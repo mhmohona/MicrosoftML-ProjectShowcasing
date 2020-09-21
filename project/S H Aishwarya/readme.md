@@ -1,5 +1,5 @@
+# Title: Boston house price prediction
 Slack Name: S H Aishwarya
-Title: Boston house price prediction
 * Linear Regression:
 linear regression is a linear approach to modeling the relationship between a scalar response and one or more explanatory variables.
 
