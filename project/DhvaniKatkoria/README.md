@@ -10,6 +10,7 @@ Dhvani Katkoria
 Road detection is beneficial for various autonomous vehicles tasks. Robust road segmentation is a key challenge in self-driving research. Despite rapid developments in visual image-based road detection, robustly identifying road areas in visual images remains challenging due to issues like illumination changes and blurry images. Image segmentation is pixel wise classification of each point into given number of classes. Here we have 2 classes for road and non-road region. To improve better road detection and segmentation the same image is used in different way for features extraction and this features are combined with the features extracted from original image. Image is initially segmented using K-means clustering into 3 parts end, and fed to the CNN model along with original for feature extraction. The project is to perform segmentation of road regions from given input image using fusion of features. Two set of images are used for training a CNN model: Original image and basic segmented image using K-means clustering. Features of both images are fused to obtain better accuracy in segmentation task. 
 ​
 ​
+
 ## Dataset: 
 **Kitti Road/Lane Detection Evaluation 2013:** Dataset is used for road segmentation. The dataset consists of 289 training and 290 test images. Link : http://www.cvlibs.net/datasets/kitti/eval_road.php It contains three different categories of road scenes:
 ​
@@ -63,7 +64,7 @@ Image above shows sample image and its ground truth. However, the ground truths 
    <img src = 'image_dataset/table.png' />  
 -Notebook contains the code implemented in google colab.
 ​
-​
+
 ## Impact and Future scope
 - As stated in introduction section road segmentation is beneficial for various autonomous vehicles tasks.
 - Improving robustly identifying road areas in visual images can be very useful for self driving vehicles.
