@@ -6,8 +6,8 @@ Dhvani Katkoria
 ## Introduction
 ​
   
-   <img src = 'image_dataset/road_seg.png' /> <br />
-Road detection is beneficial for various autonomous vehicles tasks. Robust road segmentation is a key challenge in self-driving research. Despite rapid developments in visual image-based road detection, robustly identifying road areas in visual images remains challenging due to issues like illumination changes and blurry images. To improve better road detection and segmentation the same image is used in different way for features extraction and this features are combined with the features extracted from original image. Image is initially segmented using K-means clustering into 3 parts end, LiDAR sensor data can be incorporated to improve the visual image-based road detection, because LiDAR data is less susceptible to visual noises. The project is to perform segmentation of road regions from given input image using fusion of features. Two set of images are used for training a CNN model: Original image and basic segmented image using K-means clustering. Features of both images are fused to obtain better accuracy in segmentation task. 
+   <img src = 'image_dataset/road_seg.png' /> 
+Road detection is beneficial for various autonomous vehicles tasks. Robust road segmentation is a key challenge in self-driving research. Despite rapid developments in visual image-based road detection, robustly identifying road areas in visual images remains challenging due to issues like illumination changes and blurry images. Image segmentation is pixel wise classification of each point into given number of classes. Here we have 2 classes for road and non-road region. To improve better road detection and segmentation the same image is used in different way for features extraction and this features are combined with the features extracted from original image. Image is initially segmented using K-means clustering into 3 parts end, and fed to the CNN model along with original for feature extraction. The project is to perform segmentation of road regions from given input image using fusion of features. Two set of images are used for training a CNN model: Original image and basic segmented image using K-means clustering. Features of both images are fused to obtain better accuracy in segmentation task. 
 ​
 ​
 ## Dataset: 
@@ -19,15 +19,15 @@ Road detection is beneficial for various autonomous vehicles tasks. Robust road 
 ​
 ​
  <img src = 'image_dataset/dataset.png' /> 
- <br />
-Image above shows sample image and its ground truth. However, the ground truths are available only for training images. Hence, only training images are used for project and the same is divided into training and test data for model training and evaluation. <br />
+ 
+Image above shows sample image and its ground truth. However, the ground truths are available only for training images. Hence, only training images are used for project and the same is divided into training and test data for model training and evaluation. 
 ​
 ​
 ## Knowledge from coursework:
 ​
 - Image encoding is used to convert image data into 3D array with (R,G,B) values at each pixel position.
 - K-means clustering is applied to image for initial segmentation of image into 3 parts assuming image is segmented for each part represented by road, sky, other objects. So, for each part features can be extracted and used along with original image features for model training.
-- Feature learning is important to imagederive new features in dataset. We learn features from original image as well as from initial segmented image using CNN model and merge the features obtained from both the images for better feature learning and precise segmentation.
+- Feature learning is important to derive new features in dataset. We learn features from original image as well as from initial segmented image using CNN model and merge the features obtained from both the images for better feature learning and precise segmentation.
 - The project is implemented using publicly available dataset to avoid any kind of harm to anyone's privacy. 
 - Model evaluation metrics like accuracy, precision, recall, Mean IOU and AUC scores are used for evaluation of trained model.
 - Visualizing results is important for anyone to observe the precision of results obtained. Training and validation accuracy scores are plotted for each epoch to observe the learning graph. Output segmented image is visualized with original image for clear view of segmented area.
@@ -56,12 +56,13 @@ Image above shows sample image and its ground truth. However, the ground truths 
 ​
 - Evaluation of model is done using Accuracy, Precision, Recall, AUC and Mean IOU metrics.
 - Training and validation accuracy and loss plots for each fusion type to visualize the accuracy and loss are as shown below:
-   <img src = 'image_dataset/acc.png' />  <img src = 'image_dataset/img_only_acc.png' /> <br />
+   <img src = 'image_dataset/acc.png' />  <img src = 'image_dataset/img_only_acc.png' /> 
    <img src = 'image_dataset/loss.png' />  
 - Output images are visualized against the original image using transparency. Output image are pixels are assigned green and red RGB values based on the probabilities of 2 classes (Road & Non Road) predicted by model. Output image and input image are fused using average of each pixels of each image for transparency. Few results are as shown below. 
-   <img src = 'image_dataset/output.png' />  <br />
-   <img src = 'image_dataset/table.png' />  <br />
+   <img src = 'image_dataset/output.png' /> 
+   <img src = 'image_dataset/table.png' />  
 -Notebook contains the code implemented in google colab.
+​
 ​
 ## Impact and Future scope
 - As stated in introduction section road segmentation is beneficial for various autonomous vehicles tasks.
