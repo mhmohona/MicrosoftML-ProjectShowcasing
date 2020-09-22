@@ -1,7 +1,7 @@
 
 # Music Recommendation System
 
-**Team**    : Aarthi Alagammai , Anupriya Saraswat , Divyanshu Malik, Garima Sharma , Harshit Rai , Nidhi Singh, Snehal Lokesh 
+**Team**    : Aarthi Alagammai , Anupriya Saraswat , Divyanshu Malik, Garima Sharma , Harshit Rai , Nidhi Singh, Snehal Lokesh, Akanksha Singh
 
 
 **Introduction:**
