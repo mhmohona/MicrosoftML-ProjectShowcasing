@@ -2,6 +2,13 @@
 
 This project utilises Python and Azure suite of products to provide prediction for heart failure.
 
+## Prizes won
+
+This project won 2 prizes in a 50-team competition
+
+- Category winner for Impact and potential: Based on the impact that the project may create on society, for the betterment of technology, humanity, as a business model which solves a major issue.
+- Community Choice Award: Based on the approval of the 10,000 participants of the program community of 3 criteria: Innovation, Positive Impact, and Presentation.
+
 ## 1. Overview
 
 ### 1.1. Team member
@@ -178,3 +185,7 @@ Since the main aim of this project is to focus on developing and deploying a mac
 - More sophisticated hyperparameter tuning (Bayesian search, AutoML)
 - Feature selection based on feature importance
 - Apply interpretation methods (e.g. SHAP) to understand the patient's condition and suggest potential treatment
+
+## Data source
+
+Ahmad T, Munir A, Bhatti SH, Aftab M, Ali Raza M. Survival analysis of heart failure patients: a case study. [Dataset](https://plos.figshare.com/articles/Survival_analysis_of_heart_failure_patients_A_case_study/5227684/1)
