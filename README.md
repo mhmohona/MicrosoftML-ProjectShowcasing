@@ -6,9 +6,41 @@ A challenge to keep and showcase all the open sources projects that are implemen
 
 **For whom:** Individuals or study groups
 
+**3D Virtual Gallery of All Projects:** [Check here](https://www.artsteps.com/embed/5f6a032dce71b22cc8b83f72/560/315) 🖼
+
+
+## Winners:
+
+**Overall Winners:**
+
+- 1st Position - [Sales Forecasting Using Azure ML](https://app.powerbi.com/view?r=eyJrIjoiMTU2Y2MzMDctYzkwNC00MjA0LTlmOTktODNkZWQ4MDZjNmU1IiwidCI6IjkxMzc2MWU4LTc4NjEtNDc0ZS05ZjM4LWQyZDc1MjUwMDExZiJ9&pageName=ReportSection76d20a236ccf778e58a4)
+- 2nd Position - [Quote Finder](https://github.com/mhmohona/MicrosoftML-ProjectShowcasing/tree/master/project/Aleem%20Juma)
+- 3rd Position- [Algorithmic Trading](https://github.com/mhmohona/MicrosoftML-ProjectShowcasing/tree/master/project/Algor%20Traders)
+
+**Category Winners**
+
+- Category : Using Azure for Implementation based on Course Material - [Book Recommendation System](https://github.com/mhmohona/MicrosoftML-ProjectShowcasing/tree/master/project/Hannan)
+- Category : Using Azure for Implementation based on Course Material - [Reduce Employee Attrition](https://github.com/mhmohona/MicrosoftML-ProjectShowcasing/tree/master/project/EnricoD)
+- Category : Innovation & Creativity - [Computer Vision for Automate the Process of Elections](https://github.com/mhmohona/MicrosoftML-ProjectShowcasing/tree/master/project/Fernando%20T)
+- Category : Project Implementation - [Viral vs Bacterial Pneumonia Image Classification using Transfer Learning](https://github.com/mhmohona/MicrosoftML-ProjectShowcasing/tree/master/project/Mukund)
+- Category : Impact & Potential - [Predicting Heart Failure with Machine Learning](https://github.com/mhmohona/MicrosoftML-ProjectShowcasing/tree/master/project/Quy%20Vu)
+- Category : Responsible AI - [Fake News Classifier using Machine Learning](https://github.com/mhmohona/MicrosoftML-ProjectShowcasing/tree/master/project/Armando%20Medina)
+
+**Community Choice Awards**
+
+- Category : Innovation - [Decision Intel Foresights MLSecOps Automation MICROSERVICE](https://github.com/mhmohona/MicrosoftML-ProjectShowcasing/tree/master/project/SE)
+- Category : Positive Impact - [Predicting Heart Failure with Machine Learning](https://github.com/mhmohona/MicrosoftML-ProjectShowcasing/tree/master/project/Quy%20Vu)
+- Category:  Presentation - [Algorithmic Trading](https://github.com/mhmohona/MicrosoftML-ProjectShowcasing/tree/master/project/Algor%20Traders)
+
+**Special Mention**
+
+- [Chest X-ray Image Classification for COVID-19 and Pneumonia using Deep CNN](https://github.com/mhmohona/MicrosoftML-ProjectShowcasing/tree/master/project/A7MED)
+
 ## Timeline: 
 **Start date:** 28 August 2020, 00.01am UTC <br />
-**End date:** 20 September 2020, 11.59pm UTC
+**End date:** 20 September 2020, 11.59pm UTC <br />
+**Result Announced:** 25 September 2020
+
 
 
 ## Rules:
@@ -84,7 +116,7 @@ Name | Slack handle
 ------------ | ------------- 
 Aron Castro | Aron Castro
 Laura Truncellito | LauraT
-[Mahfuza Humayra Mohona](http://linkedin.com/in/mhmohona) | Mahfuza Mohona
+Mahfuza Humayra Mohona | Mahfuza Mohona
 Maulin Gogri | Maulin Gogri
 Panth Shah | Panth Shah
 Ruthu S Sanketh | Ruthu
