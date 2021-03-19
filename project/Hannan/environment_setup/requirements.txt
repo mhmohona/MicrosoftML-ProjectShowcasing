@@ -2,7 +2,7 @@ tensorflow==2.3.0
 numpy==1.18.1
 scipy==1.4.0
 scikit-learn==0.20.0
-pillow==5.3.0
+pillow==8.1.1
 h5py==2.8.0
 Keras==2.3.0
 matplotlib==3.3.2
