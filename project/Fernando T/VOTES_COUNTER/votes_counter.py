@@ -1,7 +1,7 @@
 import cv2
 import os
 import sys
-from pathlib import Path 
+from pathlib import Path
 import glob
 import argparse
 from tqdm import tqdm
@@ -10,7 +10,7 @@ import json
 import requests
 
 CURRENT_PROJECT_PATH = os.getcwd()
-print(str(Path(CURRENT_PROJECT_PATH).parents[0]))
+print(Path(CURRENT_PROJECT_PATH).parents[0])
 
 
 sys.path.insert(1, str(Path(CURRENT_PROJECT_PATH).parents[0]))
@@ -114,6 +114,8 @@ class VotesCounter(ImageHanlder):
         Expected input, full image 
         """
 
+        _file_name_log = "results_log"
+
         for i_path in tqdm(images_list[:5], ascii=True, desc="Reading..."):
             print(f"IMAGE : {i_path}")
             self.interchange = False
@@ -133,18 +135,18 @@ class VotesCounter(ImageHanlder):
 
             # Obtain only the name without extension 
             filename_root = filename.split(".")[0]
-            
+
             # Find the contours box rectangle for each partido 
             cont_img, self.outputs = self.find_contour(c_image, i_path)
-            
+
             for o in self.outputs:
                 # Iterate over the rectangular boxes
                 for k, v in o.items():
                     #print(f"WORKING ON {k}")
                     partido_key_id = k  
-                    
+
                     p1, p2 = v
-                    
+
                     # Draw Reactable for 
                     self.draw_rectangle_numpy(cont_img, p1,p2 )
 
@@ -160,7 +162,7 @@ class VotesCounter(ImageHanlder):
 
                     # Draw Reactable again.
                     self.draw_rectangle_numpy(cont_img, n_p1, n_p2 )
-                    
+
                     # Letters as image |X|X|X|
 
                     # Obtain the numbers coordinates
@@ -175,15 +177,15 @@ class VotesCounter(ImageHanlder):
 
                     # Find again the letters with the contour detector:
                     l_h, l_w, _ = numbers_cout.shape
-                    
+
                     # Attempt to cut each letter
                     votes = []
 
                     # Iterate over this expected tree number images
-                    for i in range(0,3):
-                        
+                    for i in range(3):
+
                         # Hard code possible position of numbers
-                        
+
                         # Sliding x-window of 50 pixels
                         x0 = i*50       + 5
                         x1 = (i+1)*50   + 5
@@ -191,12 +193,12 @@ class VotesCounter(ImageHanlder):
                         # New Points 
                         p1_l = (x0, 0)
                         p2_l = (x1, l_h)
-                        
+
                         #####cv2.rectangle(numbers_cout, p1_l, p2_l, (244, 255, 0), 2)
-                        
+
                         ####cv2.imwrite(f"actas/cuts/partidos/numbers/{filename_two}-{k}.jpg", numbers_cout)
 
-                        
+
                         # Adjust each letter to his aprox box
                         # the labels for each latter are 0 , 1 and else
                         if (i == 0):
@@ -206,7 +208,7 @@ class VotesCounter(ImageHanlder):
                         elif (i == 1):
                             p1_l_n = (p1_l[0]-5, p1_l[1])
                             p2_l_n = (p2_l[0]-45, p2_l[1]-1) #from  (p2_l[0]-50, p2_l[1]-3)
-                            
+
                             letter = self.cut_image(numbers_cout, p1_l_n, p2_l_n,simple=True)
                         else:
                             p2_l_n = (p2_l[0]-120, p2_l[1]+10)
@@ -219,7 +221,7 @@ class VotesCounter(ImageHanlder):
                         prediction = self.call_server_prediction(letter)
 
                         votes.append(prediction)
-                        
+
                         if self.cut_numbers:
                             # Path where save the digit numbers
                             os.makedirs("results_votes/numbers/", exist_ok=True)
@@ -228,20 +230,18 @@ class VotesCounter(ImageHanlder):
 
                             # Save letter image
                             cv2.imwrite(full_path, letter)
-                    
-                    self.data_handler.append({partido_key_id: [votes, v]})       
-                    
-                    # IF needed, save the  |X|X|X| image
-                    # os.makedirs("results/numbers_3XXX/", exist_ok=True)
 
-                    #cv2.imwrite(f"results/numbers_3XXX/{filename_root}-{k}-.jpg", numbers_cout)
-                    
-                _file_name_log = "results_log"
-                
+                    self.data_handler.append({partido_key_id: [votes, v]})       
+                                
+                                # IF needed, save the  |X|X|X| image
+                                # os.makedirs("results/numbers_3XXX/", exist_ok=True)
+
+                                #cv2.imwrite(f"results/numbers_3XXX/{filename_root}-{k}-.jpg", numbers_cout)
+
                 # Iterate over the results |X|X|X|
                 # and join the results into one single integer
                 for p in self.data_handler:
-                
+
                     # Get the dict
                     for p_name, values in p.items():
                         partido_id_name = p_name
@@ -265,13 +265,15 @@ class VotesCounter(ImageHanlder):
                                                         self.fontColor,
                                                         self.lineType)
                         # Draw ID name
-                        cv2.putText(cont_img, 
-                                str(self.all_names_dict[partido_id_name]),
-                                tuple([x-300,y+50]), 
-                                self.font, 
-                                self.fontScale,
-                                self.fontColor,
-                                self.lineType)
+                        cv2.putText(
+                            cont_img,
+                            str(self.all_names_dict[partido_id_name]),
+                            (x - 300, y + 50),
+                            self.font,
+                            self.fontScale,
+                            self.fontColor,
+                            self.lineType,
+                        )
 
                         # Write to file the count
                         self.write_row_results_log(_file_name_log, 
@@ -281,7 +283,7 @@ class VotesCounter(ImageHanlder):
 
                 self.data_handler=[]
 
-                # Write the acta with the number of results drawed on it.
+                        # Write the acta with the number of results drawed on it.
             if self.draw_results:
 
                 os.makedirs("results_votes/counts", exist_ok=True)

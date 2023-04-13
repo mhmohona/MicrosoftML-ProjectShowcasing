@@ -1,4 +1,5 @@
 """Model training script"""
+
 import json
 import joblib
 import numpy as np
@@ -28,7 +29,7 @@ max_depths = np.arange(2, 8)
 min_samples_splits = [2, 4, 8, 16, 32]
 BEST_RECALL = 0
 MODEL_FILE = 'best_model.pkl'
-MODEL_PATH = './models/' + MODEL_FILE
+MODEL_PATH = f'./models/{MODEL_FILE}'
 MODEL_NAME = EXPERIMENT_NAME = 'heartfailure_randomforest_greedy'
 MODEL_DESCRIPTION = 'Heart failure predictor with RF'
 workspace = Workspace.from_config()

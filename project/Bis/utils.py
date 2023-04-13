@@ -39,7 +39,7 @@ def load_data(train_folder, test_folder, train_labels, test_labels):
 
 
 def get_classification_results(models, X_train, X_test, y_train, y_test):
-    
+
     """
     input: Dictionary of ML models with Gridsearch parameters.
     Prints classification reports and confusion matrices.
@@ -49,8 +49,8 @@ def get_classification_results(models, X_train, X_test, y_train, y_test):
         models[i].fit(X_train, y_train)
         print(i, "Report:")
         print("############################################")
-        print("Train Accuracy: {}".format(models[i].score(X_train, y_train)))
-        print("Test Accuracy : {}".format(models[i].score(X_test, y_test)))
+        print(f"Train Accuracy: {models[i].score(X_train, y_train)}")
+        print(f"Test Accuracy : {models[i].score(X_test, y_test)}")
         y_pred = models[i].predict(X_test)
         best_params = models[i].best_params_
         best_params_df = pd.DataFrame(best_params, index=[0])
@@ -67,7 +67,7 @@ def get_classification_results(models, X_train, X_test, y_train, y_test):
         print("Confusion Matrix:")
         df1 = pd.DataFrame(cf_matrix)
         display(df1)
-        cf_matrix_normalized_p = cf_matrix / cf_matrix.astype(np.float).sum(axis=0) 
+        cf_matrix_normalized_p = cf_matrix / cf_matrix.astype(np.float).sum(axis=0)
         cf_matrix_normalized_r = cf_matrix / cf_matrix.astype(np.float).sum(axis=1)
         plt.figure(figsize=[8, 6])
         print("Normalized precision cf")
@@ -80,8 +80,8 @@ def get_classification_results(models, X_train, X_test, y_train, y_test):
         
 
 def train_class(model, num_epochs, bs, train_loader, test_loader, optimizer, criterion):
-    
-   """
+
+    """
    Trains a CNN classifier and prints train and test results.
    input: CNN model, number of epochs, batch size, PyTorch train loader and test loaders, optimizer and loss function
    returns a Pandas dataframe with loss values, plots training and test losses
@@ -106,7 +106,7 @@ def train_class(model, num_epochs, bs, train_loader, test_loader, optimizer, cri
         avg_training_loss = 0.
         correct = 0.
 
-        for i, (inputs, labels) in enumerate(train_loader):
+        for inputs, labels in train_loader:
             inputs, labels = Variable(inputs), Variable(labels)
             if torch.cuda.is_available():
                 inputs = inputs.cuda()
@@ -126,8 +126,7 @@ def train_class(model, num_epochs, bs, train_loader, test_loader, optimizer, cri
         avg_test_loss = 0.
         correct = 0.
 
-        for i, (inputs, labels) in enumerate(test_loader):
-
+        for inputs, labels in test_loader:
             inputs, labels = Variable(inputs), Variable(labels)
             if torch.cuda.is_available():
                 inputs = inputs.cuda()
@@ -218,8 +217,8 @@ def plot_feature(x, y, feature):
     y=baseObj.ModPoly(2)
     y = savgol_filter(y, 5, 2)
     peaks, _ = find_peaks(y)
-    first_n_freq = x[peaks][np.argsort(-y[peaks])][0:5]
-    first_n_int =  y[peaks][np.argsort(-y[peaks])][0:5]
+    first_n_freq = x[peaks][np.argsort(-y[peaks])][:5]
+    first_n_int = y[peaks][np.argsort(-y[peaks])][:5]
     plt.plot(x, y)
     plt.plot(x[peaks], y[peaks], "x")
     plt.xlabel('Freq/Hz')

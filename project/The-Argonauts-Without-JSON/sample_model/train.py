@@ -30,7 +30,7 @@ def run(model, neighbors):
 
     model.fit(X=X_train)
 
-    joblib.dump(model, os.path.join(config.MODEL_OUTPUT, f"knn_.bin"))
+    joblib.dump(model, os.path.join(config.MODEL_OUTPUT, "knn_.bin"))
 
 
 if __name__ == "__main__":

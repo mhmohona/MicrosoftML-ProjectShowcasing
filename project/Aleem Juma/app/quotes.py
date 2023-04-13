@@ -37,8 +37,7 @@ def get_random_word():
     '''
     Returns a random category label from the data
     '''
-    random_word = q['GENRE'].sample(1).iloc[0]
-    return random_word
+    return q['GENRE'].sample(1).iloc[0]
 
 def get_closest_words(word, choices, n=1):
     '''

@@ -33,10 +33,7 @@ def import_data(path):
     df = (pd.read_csv(path,parse_dates=True, index_col='Date')
           .iloc[:,1:]
           .sort_index())
-    df2 = df.copy()
-
-
-    return df2
+    return df.copy()
 
 def clean_data(df):
     df.loc[:,'Sales'] = (df['Sales'].str.replace(',','')
@@ -107,13 +104,13 @@ def firewood_forecast(series_with_dates, forecast_horizon):
                            seasonal_periods=12, damped=True)).fit(use_boxcox=False)
 
     hw1_fc = hw1.forecast(forecast_horizon)
-    
-        
 
-    
-    
+
+
+
+
     train_prophet_f = pd.DataFrame({'ds':pd.date_range('1-1-2012', freq='MS',periods=len(series_with_dates)), 'y':series_with_dates.values} )
-    
+
 
     prophet1=Prophet(weekly_seasonality=False,
                        yearly_seasonality=True,
@@ -125,11 +122,8 @@ def firewood_forecast(series_with_dates, forecast_horizon):
     fb1_df=prophet1.make_future_dataframe(forecast_horizon, freq='MS')
 
     prophet_fc=prophet1.predict(fb1_df)[["ds","yhat"]].tail(forecast_horizon)['yhat'].values
-    
-    firewood_forecast = (prophet_fc + hw1_fc )/2 #pd.DataFrame({"Sales":(hw1_fc+prophet_fc)/2},index=forecast_dates)
 
-    
-    return firewood_forecast
+    return (prophet_fc + hw1_fc )/2
 
 #### Final Pellet Model 
 
@@ -141,27 +135,26 @@ def pellet_forecast(train,forecast_horizon):
                                            seasonal=None,
                                            initialization_method= 'estimated', 
                                            damped_trend=False).fit()
-    
+
     fc1 = inv_boxcox(ses.forecast(forecast_horizon),lam)
-    
+
     holt=sm.tsa.statespace.ExponentialSmoothing(train_x,
                                            trend=True, 
                                            seasonal=12,
                                            initialization_method= 'estimated', 
                                            damped_trend=False).fit()
-    
+
     fc2 = inv_boxcox(holt.forecast(forecast_horizon),lam)
-    
+
     damp=sm.tsa.statespace.ExponentialSmoothing(train_x,
                                            trend=True, 
                                            seasonal=12,
                                            initialization_method= 'estimated', 
                                            damped_trend=True).fit()
-    
+
     fc3 = inv_boxcox(damp.forecast(forecast_horizon),lam)
-    
-    fc = (fc1+fc2+fc3)/3
-    return fc
+
+    return (fc1+fc2+fc3)/3
 
 
 

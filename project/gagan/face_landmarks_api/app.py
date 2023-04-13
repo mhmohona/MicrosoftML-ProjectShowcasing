@@ -20,8 +20,7 @@ def get_keypts():
         logging.info("Image recieved")
         image = np.array(Image.open(image))
         logging.info(str(type(image)))
-        result = api.get_encoding(image)
-        return result
+        return api.get_encoding(image)
     except Exception:
         return "Something went wrong", 400
 

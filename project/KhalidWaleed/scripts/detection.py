@@ -43,7 +43,7 @@ def detect_people(frame, net, ln, personIdx=0):
 				# actually returns the center (x, y)-coordinates of
 				# the bounding box followed by the boxes' width and
 				# height
-				box = detection[0:4] * np.array([W, H, W, H])
+				box = detection[:4] * np.array([W, H, W, H])
 				(centerX, centerY, width, height) = box.astype("int")
 
 				# use the center (x, y)-coordinates to derive the top

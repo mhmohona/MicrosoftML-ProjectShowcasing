@@ -17,7 +17,7 @@ sys.path.insert(1, "/content/drive/My Drive/Chest_X_rays/gradcam_function")
 from compute_gradcam.gradcam import GradCAM #function to compute gradcam
 
 def fn_gradcam(img_path):
-  print("Image name: "+str(os.path.basename(os.path.normpath(img_path))))
+  print(f"Image name: {str(os.path.basename(os.path.normpath(img_path)))}")
   print("[INFO] loading model...")
   # initialize the model to be DenseNet121
   base_model = DenseNet121(weights=None, include_top=False)
@@ -29,7 +29,7 @@ def fn_gradcam(img_path):
 
   #Dropout layer
   x = Dropout(0.2)(x) # Regularize with dropout
-  
+
   # and a logistic layer
   predictions = Dense(1, activation="sigmoid")(x)
 
@@ -54,13 +54,8 @@ def fn_gradcam(img_path):
   # use the network to make predictions on the input imag and find
   # the class label index with the largest corresponding probability
   preds = model.predict(image)
-  if np.round(preds) == 1:
-    label = "Virus Pnenumonia"
-    label = "{}: {:.3f}".format(label, preds[0][0])
-  else:
-    label = "Bacteria Pnenumonia"
-    label = "{}: {:.3f}".format(label, preds[0][0])
-
+  label = "Virus Pnenumonia" if np.round(preds) == 1 else "Bacteria Pnenumonia"
+  label = "{}: {:.3f}".format(label, preds[0][0])
   #decode the ImageNet predictions to obtain the human-readable label
   """decoded = imagenet_utils.decode_predictions(preds)
   (imagenetID, label, prob) = decoded[0][0]

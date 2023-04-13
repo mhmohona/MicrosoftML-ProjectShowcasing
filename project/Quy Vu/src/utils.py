@@ -40,11 +40,7 @@ class DBConnection:
         username = login_details['username']
         password = login_details['password']
 
-        conn_str = 'DRIVER={};SERVER={};PORT={};DATABASE={};UID={};PWD={}'.format(
-            driver, server, port, database, username, password
-        )
-
-        return conn_str
+        return f'DRIVER={driver};SERVER={server};PORT={port};DATABASE={database};UID={username};PWD={password}'
 
     def query(self, statement):
         """Execute SQL statement
@@ -66,8 +62,8 @@ class DBConnection:
 
 
 def load_data(folder='train'):
-    features = pd.read_csv('./data/{}/features.csv'.format(folder))
-    labels = pd.read_csv('./data/{}/labels.csv'.format(folder))
+    features = pd.read_csv(f'./data/{folder}/features.csv')
+    labels = pd.read_csv(f'./data/{folder}/labels.csv')
 
     return features, labels
 

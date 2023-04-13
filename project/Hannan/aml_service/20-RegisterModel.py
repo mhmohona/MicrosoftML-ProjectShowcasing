@@ -23,6 +23,7 @@ IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
 ARISING IN ANY WAY OUT OF THE USE OF THE SOFTWARE CODE, EVEN IF ADVISED OF THE
 POSSIBILITY OF SUCH DAMAGE.
 """
+
 import os, json, sys
 from azureml.core import Workspace
 from azureml.core import Run
@@ -54,16 +55,16 @@ exp = Experiment(workspace=ws, name=experiment_name)
 run = Run(experiment=exp, run_id=run_id)
 names = run.get_file_names
 names()
-print("Run ID for last run: {}".format(run_id))
+print(f"Run ID for last run: {run_id}")
 model_local_dir = "model"
 os.makedirs(model_local_dir, exist_ok=True)
 
 # Download Model to Project root directory
 model_name = "sklearn_regression_model.pkl"
 run.download_file(
-    name="./outputs/" + model_name, output_file_path="./model/" + model_name
+    name=f"./outputs/{model_name}", output_file_path=f"./model/{model_name}"
 )
-print("Downloaded model {} to Project root directory".format(model_name))
+print(f"Downloaded model {model_name} to Project root directory")
 os.chdir("./model")
 model = Model.register(
     model_path=model_name,  # this points to a local file
@@ -74,18 +75,17 @@ model = Model.register(
 )
 os.chdir("..")
 print(
-    "Model registered: {} \nModel Description: {} \nModel Version: {}".format(
-        model.name, model.description, model.version
-    )
+    f"Model registered: {model.name} \nModel Description: {model.description} \nModel Version: {model.version}"
 )
 
 # Remove the evaluate.json as we no longer need it
 # os.remove("aml_config/evaluate.json")
 
 # Writing the registered model details to /aml_config/model.json
-model_json = {}
-model_json["model_name"] = model.name
-model_json["model_version"] = model.version
-model_json["run_id"] = run_id
+model_json = {
+    "model_name": model.name,
+    "model_version": model.version,
+    "run_id": run_id,
+}
 with open("aml_config/model.json", "w") as outfile:
     json.dump(model_json, outfile)

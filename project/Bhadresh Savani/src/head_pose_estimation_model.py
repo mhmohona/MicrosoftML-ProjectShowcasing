@@ -29,7 +29,9 @@ class HeadPoseEstimationModel(Model):
                 outputs = self.network.requests[0].outputs
                 f_output = self.preprocess_output(outputs)
         except Exception as e:
-            self.logger.error("Error While prediction in Head Pose Estimation Model" + str(e))
+            self.logger.error(
+                f"Error While prediction in Head Pose Estimation Model{str(e)}"
+            )
         return f_output
 
     def preprocess_output(self, outputs):
@@ -41,9 +43,15 @@ class HeadPoseEstimationModel(Model):
         """
         final_output = []
         try:
-            final_output.append(outputs['angle_y_fc'][0][0])
-            final_output.append(outputs['angle_p_fc'][0][0])
-            final_output.append(outputs['angle_r_fc'][0][0])
+            final_output.extend(
+                (
+                    outputs['angle_y_fc'][0][0],
+                    outputs['angle_p_fc'][0][0],
+                    outputs['angle_r_fc'][0][0],
+                )
+            )
         except Exception as e:
-            self.logger.error("Error While preprocessing output in Head Pose Estimation Model" + str(e))
+            self.logger.error(
+                f"Error While preprocessing output in Head Pose Estimation Model{str(e)}"
+            )
         return final_output

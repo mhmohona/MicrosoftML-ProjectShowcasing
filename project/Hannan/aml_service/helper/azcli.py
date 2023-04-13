@@ -43,7 +43,7 @@ def run_cmd(cmd : str):
     proc = subprocess.Popen(cmd, shell = True, stdout=subprocess.PIPE, universal_newlines = True)
     output, error = proc.communicate()
     if proc.returncode !=0:
-        print('Following command execution failed: {}'.format(cmd))
+        print(f'Following command execution failed: {cmd}')
         raise Exception('Operation Failed. Look at console logs for error info')
     return output, error
 

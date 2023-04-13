@@ -50,11 +50,7 @@ def stream_lit():
     st.sidebar.table(label_df)
     file_image = st.file_uploader("Upload a car photo", type = ['jpeg', 'jpg', 'png'])
 
-    if file_image is None:
-        pass
-        # st.write("upload image")
-
-    else :
+    if file_image is not None:
         # input_img = open_image(file_image)
         pred, pred_idx, probabs = predict(file_image, MODEL)
         st.write("Input photo")

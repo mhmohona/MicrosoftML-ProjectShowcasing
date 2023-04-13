@@ -13,9 +13,9 @@ class GazeEstimationModel(Model):
         """
         Model.__init__(self, model_path, device, extensions, threshold)
         self.model_name = 'Face Detection Model'
-        self.input_name = [i for i in self.model.inputs.keys()]
+        self.input_name = list(self.model.inputs.keys())
         self.input_shape = self.model.inputs[self.input_name[1]].shape
-        self.output_name = [o for o in self.model.outputs.keys()]
+        self.output_name = list(self.model.outputs.keys())
 
     def predict(self, left_eye_image, right_eye_image, hpe_cords, request_id=0):
         """
@@ -32,7 +32,7 @@ class GazeEstimationModel(Model):
                 outputs = self.network.requests[0].outputs
                 mouse_cord, gaze_vector = self.preprocess_output(outputs, hpe_cords)
         except Exception as e:
-            self.logger.error("Error While Prediction in Gaze Estimation Model" + str(e))
+            self.logger.error(f"Error While Prediction in Gaze Estimation Model{str(e)}")
         return mouse_cord, gaze_vector
 
     def preprocess_output(self, outputs, hpe_cords):
@@ -55,5 +55,7 @@ class GazeEstimationModel(Model):
             y = -gaze_vector[0] * sin_r + gaze_vector[1] * cos_r
             mouse_cord = (x, y)
         except Exception as e:
-            self.logger.error("Error While preprocessing output in Gaze Estimation Model" + str(e))
+            self.logger.error(
+                f"Error While preprocessing output in Gaze Estimation Model{str(e)}"
+            )
         return mouse_cord, gaze_vector

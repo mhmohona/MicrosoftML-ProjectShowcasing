@@ -6,7 +6,7 @@ from src.utils import load_metadata
 def get_prediction(case):
     metadata = load_metadata()
     uri = metadata['webservice_uri']
-    input_json = json.dumps(json.load(open('./tests_/test_data/{}.json'.format(case))))
+    input_json = json.dumps(json.load(open(f'./tests_/test_data/{case}.json')))
     response = requests.post(uri, input_json, headers={'Content-Type':'application/json'})
     return json.loads(response.content)
 

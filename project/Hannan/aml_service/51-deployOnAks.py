@@ -23,6 +23,7 @@ IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
 ARISING IN ANY WAY OUT OF THE USE OF THE SOFTWARE CODE, EVEN IF ADVISED OF THE
 POSSIBILITY OF SUCH DAMAGE.
 """
+
 import os, json, datetime, sys
 from operator import attrgetter
 from azureml.core import Workspace
@@ -51,9 +52,7 @@ image_version = config["image_version"]
 images = Image.list(workspace=ws)
 image, = (m for m in images if m.version == image_version and m.name == image_name)
 print(
-    "From image.json, Image used to deploy webservice on ACI: {}\nImage Version: {}\nImage Location = {}".format(
-        image.name, image.version, image.image_location
-    )
+    f"From image.json, Image used to deploy webservice on ACI: {image.name}\nImage Version: {image.version}\nImage Location = {image.image_location}"
 )
 
 # image = max(images, key=attrgetter('version'))
@@ -69,9 +68,7 @@ try:
     aks_target, = (c for c in compute_list if c.name == aks_name)
     service = Webservice(name=aks_service_name, workspace=ws)
     print(
-        "Updating AKS service {} with image: {}".format(
-            aks_service_name, image.image_location
-        )
+        f"Updating AKS service {aks_service_name} with image: {image.image_location}"
     )
     service.update(image=image)
 except:
@@ -81,9 +78,7 @@ except:
         agent_count=6, vm_size="Standard_F4", location="eastus"
     )
     print(
-        "No AKS found in aks_webservice.json. Creating new Aks: {} and AKS Webservice: {}".format(
-            aks_name, aks_service_name
-        )
+        f"No AKS found in aks_webservice.json. Creating new Aks: {aks_name} and AKS Webservice: {aks_service_name}"
     )
     # Create the cluster
     aks_target = ComputeTarget.create(
@@ -108,17 +103,16 @@ except:
     service.wait_for_deployment(show_output=True)
     print(service.state)
     print(
-        "Deployed AKS Webservice: {} \nWebservice Uri: {}".format(
-            service.name, service.scoring_uri
-        )
+        f"Deployed AKS Webservice: {service.name} \nWebservice Uri: {service.scoring_uri}"
     )
 
 
 # Writing the AKS details to /aml_config/aks_webservice.json
-aks_webservice = {}
-aks_webservice["aks_name"] = aks_name
-aks_webservice["aks_service_name"] = service.name
-aks_webservice["aks_url"] = service.scoring_uri
-aks_webservice["aks_keys"] = service.get_keys()
+aks_webservice = {
+    "aks_name": aks_name,
+    "aks_service_name": service.name,
+    "aks_url": service.scoring_uri,
+    "aks_keys": service.get_keys(),
+}
 with open("aml_config/aks_webservice.json", "w") as outfile:
     json.dump(aks_webservice, outfile)

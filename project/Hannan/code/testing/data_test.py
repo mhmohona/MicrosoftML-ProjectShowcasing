@@ -73,9 +73,7 @@ def check_schema(X):
     n_actual_columns = X.shape[1]
     if n_actual_columns != n_columns:
         print(
-            "Error: found {} feature columns. The data should have {} feature columns.".format(
-                n_actual_columns, n_columns
-            )
+            f"Error: found {n_actual_columns} feature columns. The data should have {n_columns} feature columns."
         )
         return False
 
@@ -85,7 +83,7 @@ def check_schema(X):
 def check_missing_values(dataset):
     n_nan = np.sum(np.isnan(dataset.values))
     if n_nan > 0:
-        print("Warning: the data has {} missing values".format(n_nan))
+        print(f"Warning: the data has {n_nan} missing values")
         return False
     return True
 
@@ -105,7 +103,7 @@ def check_distribution(dataset):
 def main():
     filename = sys.argv[1]
     if not os.path.exists(filename):
-        print("Error: The file {} does not exist".format(filename))
+        print(f"Error: The file {filename} does not exist")
         return
 
     dataset = pd.read_csv(filename)

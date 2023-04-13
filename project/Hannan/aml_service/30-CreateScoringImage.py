@@ -23,6 +23,7 @@ IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
 ARISING IN ANY WAY OUT OF THE USE OF THE SOFTWARE CODE, EVEN IF ADVISED OF THE
 POSSIBILITY OF SUCH DAMAGE.
 """
+
 import os, json, sys
 from azureml.core import Workspace
 from azureml.core.image import ContainerImage, Image
@@ -50,9 +51,7 @@ model_version = config["model_version"]
 model_list = Model.list(workspace=ws)
 model, = (m for m in model_list if m.version == model_version and m.name == model_name)
 print(
-    "Model picked: {} \nModel Description: {} \nModel Version: {}".format(
-        model.name, model.description, model.version
-    )
+    f"Model picked: {model.name} \nModel Description: {model.description} \nModel Version: {model.version}"
 )
 
 os.chdir("./code/scoring")
@@ -77,20 +76,15 @@ if image.creation_state != "Succeeded":
     raise Exception("Image creation status: {image.creation_state}")
 
 print(
-    "{}(v.{} [{}]) stored at {} with build log {}".format(
-        image.name,
-        image.version,
-        image.creation_state,
-        image.image_location,
-        image.image_build_log_uri,
-    )
+    f"{image.name}(v.{image.version} [{image.creation_state}]) stored at {image.image_location} with build log {image.image_build_log_uri}"
 )
 
 # Writing the image details to /aml_config/image.json
-image_json = {}
-image_json["image_name"] = image.name
-image_json["image_version"] = image.version
-image_json["image_location"] = image.image_location
+image_json = {
+    "image_name": image.name,
+    "image_version": image.version,
+    "image_location": image.image_location,
+}
 with open("aml_config/image.json", "w") as outfile:
     json.dump(image_json, outfile)
 

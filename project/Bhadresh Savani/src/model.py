@@ -20,7 +20,7 @@ class Model:
             self.core = IECore()
             self.model = IENetwork(self.model_structure, self.model_weights)
         except Exception as e:
-            self.logger.error("Error While Initilizing" + str(self.model_name) + str(e))
+            self.logger.error(f"Error While Initilizing{self.model_name}{str(e)}")
             raise ValueError("Could not Initialise the network. Have you enterred the correct model path?")
 
     def load_model(self):
@@ -31,7 +31,7 @@ class Model:
         try:
             self.network = self.core.load_network(network=self.model, device_name=self.device_name, num_requests=1)
         except Exception as e:
-            self.logger.error("Error While Loading"+str(self.model_name)+str(e))
+            self.logger.error(f"Error While Loading{str(self.model_name)}{str(e)}")
 
     def predict(self):
         pass
@@ -53,12 +53,13 @@ class Model:
             image = image.transpose((2, 0, 1))
             image = image.reshape(1, *image.shape)
         except Exception as e:
-            self.logger.error("Error While preprocessing Image in " + str(self.model_name) + str(e))
+            self.logger.error(
+                f"Error While preprocessing Image in {str(self.model_name)}{str(e)}"
+            )
         return image
 
     def wait(self):
         '''
         Checks the status of the inference request.
         '''
-        status = self.network.requests[0].wait(-1)
-        return status
+        return self.network.requests[0].wait(-1)

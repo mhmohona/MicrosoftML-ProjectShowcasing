@@ -23,19 +23,18 @@ def get_keypts(image_url: str, silent: bool, method: str='docker') -> list:
         ValueError: if the method selected is not available
 
     """
-    if method == 'docker':
-        f = {'file': open(image_url, 'rb').read()}
-        result = requests.post(URL, files=f)
-        if result.status_code == 200:
-            try:
-                keypts = json.loads(result.text)['points']
-                keypts = np.array(keypts).reshape((1,-1))[0]
-                return keypts
-            except:
-                return None
-        else:
-            if not silent: 
-                print(result.text)
+    if method != 'docker':
+        raise ValueError("method not valid")
+    f = {'file': open(image_url, 'rb').read()}
+    result = requests.post(URL, files=f)
+    if result.status_code == 200:
+        try:
+            keypts = json.loads(result.text)['points']
+            keypts = np.array(keypts).reshape((1,-1))[0]
+            return keypts
+        except:
             return None
     else:
-        raise ValueError("method not valid")
+        if not silent: 
+            print(result.text)
+        return None

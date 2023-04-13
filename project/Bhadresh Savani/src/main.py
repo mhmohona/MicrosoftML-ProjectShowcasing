@@ -135,7 +135,7 @@ def main():
 
     for model_path in list(model_path_dict.values()):
         if not os.path.isfile(model_path):
-            logger.error("Unable to find specified model file" + str(model_path))
+            logger.error(f"Unable to find specified model file{str(model_path)}")
             exit(1)
 
     # instantiate model
@@ -193,10 +193,10 @@ def main():
             gaze_vectors.append(gaze_vector)
 
         except Exception as e:
-            logger.warning("Could predict using model" + str(e) + " for frame " + str(frame_count))
+            logger.warning(f"Could predict using model{str(e)} for frame {frame_count}")
             continue
 
-        if not len(preview_flags) == 0:
+        if len(preview_flags) != 0:
             preview_frame = draw_preview(
                 frame, 'ff', cropped_image, left_eye_image, right_eye_image,
                 face_cords, eye_cords, pose_output, gaze_vector)
@@ -208,11 +208,33 @@ def main():
             total_score += 1
 
         # show score on output video
-        cv2.putText(ex_frame, "Instructor Gaze Vector: {} ".format(instructor_gaze_vector), (40, 60), cv2.FONT_HERSHEY_COMPLEX, 1,
-                    (0, 0, 0), 2)
-        cv2.putText(ex_frame, "User Gaze Vector: {}".format(gaze_vector), (40, 100), cv2.FONT_HERSHEY_COMPLEX, 1,
-                    (0, 0, 0), 2)
-        cv2.putText(ex_frame, "Gaze Match Score : {}".format(total_score), (40, 145), cv2.FONT_HERSHEY_COMPLEX, 1.5, (0, 0, 0), 2)
+        cv2.putText(
+            ex_frame,
+            f"Instructor Gaze Vector: {instructor_gaze_vector} ",
+            (40, 60),
+            cv2.FONT_HERSHEY_COMPLEX,
+            1,
+            (0, 0, 0),
+            2,
+        )
+        cv2.putText(
+            ex_frame,
+            f"User Gaze Vector: {gaze_vector}",
+            (40, 100),
+            cv2.FONT_HERSHEY_COMPLEX,
+            1,
+            (0, 0, 0),
+            2,
+        )
+        cv2.putText(
+            ex_frame,
+            f"Gaze Match Score : {total_score}",
+            (40, 145),
+            cv2.FONT_HERSHEY_COMPLEX,
+            1.5,
+            (0, 0, 0),
+            2,
+        )
         ex_frame = cv2.rectangle(ex_frame, (20, 20), (1200, 160), (0, 0, 0), 2)
 
 
@@ -235,9 +257,9 @@ def main():
 
     gaze_df = pd.DataFrame(gaze_vectors, columns=['vector_x', 'vector_y', 'vector_z'])
     gaze_df.to_csv(filename, index=False)
-    logger.info('Model load time: ' + str(total_model_load_time))
-    logger.info('Inference time: ' + str(total_inference_time))
-    logger.info('FPS: ' + str(fps))
+    logger.info(f'Model load time: {str(total_model_load_time)}')
+    logger.info(f'Inference time: {str(total_inference_time)}')
+    logger.info(f'FPS: {str(fps)}')
     logger.info('Video stream ended')
     cv2.destroyAllWindows()
     feeder.close()

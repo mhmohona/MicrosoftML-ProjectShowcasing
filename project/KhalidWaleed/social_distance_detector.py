@@ -47,7 +47,7 @@ ln = [ln[i[0] - 1] for i in net.getUnconnectedOutLayers()]
 
 # initialize the video stream and pointer to output video file
 print("[INFO] accessing video stream...")
-vs = cv2.VideoCapture(args["input"] if args["input"] else 0)
+vs = cv2.VideoCapture(args["input"] or 0)
 writer = None
 
 # loop over the frames from the video stream
@@ -78,7 +78,7 @@ while True:
 		D = dist.cdist(centroids, centroids, metric="euclidean")
 
 		# loop over the upper triangular of the distance matrix
-		for i in range(0, D.shape[0]):
+		for i in range(D.shape[0]):
 			for j in range(i + 1, D.shape[1]):
 				# check to see if the distance between any two
 				# centroid pairs is less than the configured number
@@ -109,7 +109,7 @@ while True:
 
 	# draw the total number of social distancing violations on the
 	# output frame
-	text = "Social Distancing Violations: {}".format(len(violate))
+	text = f"Social Distancing Violations: {len(violate)}"
 	cv2.putText(frame, text, (10, frame.shape[0] - 25),
 		cv2.FONT_HERSHEY_SIMPLEX, 0.85, (0, 0, 255), 3)
 

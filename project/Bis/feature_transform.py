@@ -30,14 +30,16 @@ class FeatureTransform:
 
     def get_ints(self, signal_ints):
         self.signal_ints = signal_ints
-        time = [self.sample_rate * i for i in range(0, len(self.signal_ints))]
+        time = [self.sample_rate * i for i in range(len(self.signal_ints))]
         return time, signal_ints
 
     def get_ffts(self, signal_ints):
         self.signal_ints = signal_ints
         fft_freqs = np.linspace(0.0, 1.0 / (2.0 * self.period), self.signal_length // 2)
         fft_ints_ = fft(signal_ints)
-        fft_ints = 2.0 / self.signal_length * np.abs(fft_ints_[0:self.signal_length // 2])
+        fft_ints = (
+            2.0 / self.signal_length * np.abs(fft_ints_[: self.signal_length // 2])
+        )
         fft_ints = fft_ints - np.mean(fft_ints)
         #         fft_ints = self.normalize_data(fft_ints)
         return fft_freqs, fft_ints
@@ -56,7 +58,7 @@ class FeatureTransform:
         self.signal_ints = signal_ints
         autocorr_ints = self.autocorr(signal_ints)
         #         autocorr_ints = self.normalize_data(autocorr_ints)
-        freqs = np.array([self.period * j for j in range(0, self.signal_length)])
+        freqs = np.array([self.period * j for j in range(self.signal_length)])
         return freqs, autocorr_ints
 
     def get_first_n_features(self, x, y, n_peaks, filter_order=5, filter_poly=2):
@@ -64,22 +66,21 @@ class FeatureTransform:
         y = baseObj.ModPoly(filter_poly)
         y = savgol_filter(y, filter_order, filter_poly)
         peaks, _ = find_peaks(y)
-        first_n_freq = x[peaks][np.argsort(-y[peaks])][0:n_peaks]
-        first_n_int = y[peaks][np.argsort(-y[peaks])][0:n_peaks]
+        first_n_freq = x[peaks][np.argsort(-y[peaks])][:n_peaks]
+        first_n_int = y[peaks][np.argsort(-y[peaks])][:n_peaks]
         zero_pad_freq = [0] * n_peaks
         zero_pad_int = [0] * n_peaks
         zero_pad_freq[:len(first_n_freq)] = first_n_freq
         zero_pad_int[:len(first_n_int)] = first_n_int
-        freq_int = list(zero_pad_freq) + list(zero_pad_int)
-        return freq_int
+        return list(zero_pad_freq) + list(zero_pad_int)
 
     def get_feature_matrix(self, data, labels, n_peaks):
         all_features = []
         all_labels = []
-        for signal_no in range(0, len(data)):
+        for signal_no in range(len(data)):
             features = []
             all_labels.append(labels[signal_no])
-            for signal_comp in range(0, data.shape[2]):
+            for signal_comp in range(data.shape[2]):
                 signal = data[signal_no, :, signal_comp]
                 features += self.get_first_n_features(*self.get_psds(signal), n_peaks=n_peaks)
                 features += self.get_first_n_features(*self.get_ffts(signal), n_peaks=n_peaks)

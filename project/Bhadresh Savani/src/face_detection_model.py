@@ -30,7 +30,7 @@ class FaceDetectionModel(Model):
                 outputs = self.network.requests[0].outputs[self.output_name]
                 detections, cropped_image = self.preprocess_output(outputs, image)
         except Exception as e:
-            self.logger.error("Error While Prediction in Face Detection Model" + str(e))
+            self.logger.error(f"Error While Prediction in Face Detection Model{str(e)}")
         return detections, cropped_image
 
     def preprocess_output(self, coords, image):
@@ -56,5 +56,7 @@ class FaceDetectionModel(Model):
                     detections.append([xmin, ymin, xmax, ymax])
                     cropped_image = image[ymin:ymax, xmin:xmax]
         except Exception as e:
-            self.logger.error("Error While drawing bounding boxes on image in Face Detection Model" + str(e))
+            self.logger.error(
+                f"Error While drawing bounding boxes on image in Face Detection Model{str(e)}"
+            )
         return detections, cropped_image

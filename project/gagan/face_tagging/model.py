@@ -18,15 +18,14 @@ class FaceTaggingModel:
         if not use_docker:
             if keypoints_df is None:
                 raise ValueError("You have to use dataframe is use_docker = False")
-            else:
-                if 'Unnamed: 0' in keypoints_df.columns:
-                    keypoints_df = keypoints_df.set_index('Unnamed: 0')
+            if 'Unnamed: 0' in keypoints_df.columns:
+                keypoints_df = keypoints_df.set_index('Unnamed: 0')
 
         self._df = keypoints_df
         self._silent = False
         self._groupedClasses = None
         self._user_docker = use_docker
-        self._images_to_keypoints = dict()
+        self._images_to_keypoints = {}
         self._train_images_path = train_images_path
     
     def _prepare_data(self):
@@ -64,7 +63,7 @@ class FaceTaggingModel:
         #   2: [image_name_5, image_name_6], ...
         # }  where 0, 1, 2, etc are the different class numbers
 
-        groupedClasses = dict()
+        groupedClasses = {}
         classNum = 0
 
         # a set to store names of already predicted and matched images, so that we don't have to train on it again
@@ -75,26 +74,26 @@ class FaceTaggingModel:
         # loop over the data to train and predict
         for predict_indices, train_index in tqdm(kf_loo.split(df)):
             train_index = train_index[0]
-            
+
             label = df.iloc[train_index].name
-            
+
             # if the label (image) was already predicted and matched before continue without training
             if label in matchedImages:
                 continue
-                
+
             label_encoded = le.fit_transform([label])
-            
+
             # fit the KNN model on the single image
             points = df.iloc[train_index]
             knn.fit([points], label_encoded)
-            
+
             # predict using the trained model on remaining indices to get the distances of each point to the trained image
             prediction = knn.kneighbors(df.iloc[predict_indices])    
             distances = prediction[0].flatten()
-            
+
             # create a boolean array to filter out distances <= 0.5
             distanceFilter = distances <= 0.5
-            
+
             # filter out the images and distances using the distance filter
             prediction_labels = np.array(df.iloc[predict_indices].index)
             similarLabels = prediction_labels[distanceFilter]
@@ -103,7 +102,7 @@ class FaceTaggingModel:
             # group the trained label and predicted similar labels into one class
             groupedClasses[classNum] = np.array([label])
             new_labels[train_index] = classNum
-            
+
             if len(similarLabels) > 0:        
                 groupedClasses[classNum] = np.append(groupedClasses[classNum],similarLabels)
                 new_labels[predict_indices] = classNum
@@ -111,7 +110,7 @@ class FaceTaggingModel:
                     print(f"\nKNN Image = {label}")
                 matchedImages.add(label)
             classNum += 1
-                
+
             for i in range(len(similarLabels)):
                 if not silent:
                     print(f"Prediction Image = {similarLabels[i]}, Distance(s) = {similarDistances[i]}")
@@ -121,7 +120,7 @@ class FaceTaggingModel:
 
         # knn_full = KNeighborsClassifier(n_neighbors=classNum, algorithm='ball_tree', weights='distance')
         # knn_full.fit(df, new_labels)
-        
+
         print("Trained")
 
     def matched_groups(self) -> Dict:

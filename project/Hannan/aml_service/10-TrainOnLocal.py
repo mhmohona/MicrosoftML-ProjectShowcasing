@@ -24,6 +24,7 @@ ARISING IN ANY WAY OUT OF THE USE OF THE SOFTWARE CODE, EVEN IF ADVISED OF THE
 POSSIBILITY OF SUCH DAMAGE.
 """
 
+
 from azureml.core.runconfig import RunConfiguration
 from azureml.core import Workspace
 from azureml.core import Experiment
@@ -58,15 +59,11 @@ run.wait_for_completion(show_output=True, wait_post_processing=True)
 # Raise exception if run fails
 if run.get_status() == "Failed":
     raise Exception(
-        "Training on local failed with following run status: {} and logs: \n {}".format(
-            run.get_status(), run.get_details_with_logs()
-        )
+        f"Training on local failed with following run status: {run.get_status()} and logs: \n {run.get_details_with_logs()}"
     )
 
 # Writing the run id to /aml_config/run_id.json
 
-run_id = {}
-run_id["run_id"] = run.id
-run_id["experiment_name"] = run.experiment.name
+run_id = {"run_id": run.id, "experiment_name": run.experiment.name}
 with open("aml_config/run_id.json", "w") as outfile:
     json.dump(run_id, outfile)

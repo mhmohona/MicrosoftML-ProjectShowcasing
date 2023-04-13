@@ -23,6 +23,7 @@ IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
 ARISING IN ANY WAY OUT OF THE USE OF THE SOFTWARE CODE, EVEN IF ADVISED OF THE
 POSSIBILITY OF SUCH DAMAGE.
 """
+
 import os, json, datetime, sys
 from operator import attrgetter
 from azureml.core import Workspace
@@ -50,9 +51,7 @@ image_version = config["image_version"]
 images = Image.list(workspace=ws)
 image, = (m for m in images if m.version == image_version and m.name == image_name)
 print(
-    "From image.json, Image used to deploy webservice on ACI: {}\nImage Version: {}\nImage Location = {}".format(
-        image.name, image.version, image.image_location
-    )
+    f"From image.json, Image used to deploy webservice on ACI: {image.name}\nImage Version: {image.version}\nImage Location = {image.image_location}"
 )
 
 # image = max(images, key=attrgetter('version'))
@@ -74,15 +73,11 @@ service = Webservice.deploy_from_image(
 
 service.wait_for_deployment()
 print(
-    "Deployed ACI Webservice: {} \nWebservice Uri: {}".format(
-        service.name, service.scoring_uri
-    )
+    f"Deployed ACI Webservice: {service.name} \nWebservice Uri: {service.scoring_uri}"
 )
 
 # service=Webservice(name ='aciws0622', workspace =ws)
 # Writing the ACI details to /aml_config/aci_webservice.json
-aci_webservice = {}
-aci_webservice["aci_name"] = service.name
-aci_webservice["aci_url"] = service.scoring_uri
+aci_webservice = {"aci_name": service.name, "aci_url": service.scoring_uri}
 with open("aml_config/aci_webservice.json", "w") as outfile:
     json.dump(aci_webservice, outfile)

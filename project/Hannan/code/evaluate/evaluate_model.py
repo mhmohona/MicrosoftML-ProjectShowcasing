@@ -23,6 +23,7 @@ IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
 ARISING IN ANY WAY OUT OF THE USE OF THE SOFTWARE CODE, EVEN IF ADVISED OF THE
 POSSIBILITY OF SUCH DAMAGE.
 """
+
 import os, json
 from azureml.core import Workspace
 from azureml.core import Experiment
@@ -74,9 +75,7 @@ try:
     production_model_mse = production_model_run.get_metrics().get("mse")
     new_model_mse = new_model_run.get_metrics().get("mse")
     print(
-        "Current Production model mse: {}, New trained model mse: {}".format(
-            production_model_mse, new_model_mse
-        )
+        f"Current Production model mse: {production_model_mse}, New trained model mse: {new_model_mse}"
     )
 
     promote_new_model = False
@@ -87,8 +86,7 @@ except:
     promote_new_model = True
     print("This is the first model to be trained, thus nothing to evaluate for now")
 
-run_id = {}
-run_id["run_id"] = ""
+run_id = {"run_id": ""}
 # Writing the run id to /aml_config/run_id.json
 if promote_new_model:
     run_id["run_id"] = new_model_run_id

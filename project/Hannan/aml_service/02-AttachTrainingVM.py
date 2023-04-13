@@ -24,6 +24,7 @@ ARISING IN ANY WAY OUT OF THE USE OF THE SOFTWARE CODE, EVEN IF ADVISED OF THE
 POSSIBILITY OF SUCH DAMAGE.
 """
 
+
 from azureml.core import Workspace
 from azureml.core import Run
 from azureml.core import Experiment
@@ -60,7 +61,7 @@ try:
     dsvm_compute.wait_for_completion(show_output=True)
 
 except Exception as e:
-    print("Caught = {}".format(e.message))
+    print(f"Caught = {e.message}")
     print("Compute config already attached.")
 
 

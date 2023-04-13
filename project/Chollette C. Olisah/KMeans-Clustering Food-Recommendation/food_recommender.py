@@ -132,7 +132,7 @@ print(datanew)
 # In[13]:
 
 
-lemmatizer = WordNetLemmatizer() 
+lemmatizer = WordNetLemmatizer()
 datanew = [lemmatizer.lemmatize(k) for k in datanew.ravel()]
 print(datanew) 
 
@@ -186,7 +186,7 @@ km = model.fit(X)
 # This illustrates all entry of food for different clusters.
 common_words = model.cluster_centers_.argsort()[:,-1:-26:-1]
 for num, centroid in enumerate(common_words):
-    print(str(num) + ' : ' + ', '.join(words[word] for word in centroid))
+    print(f'{str(num)} : ' + ', '.join(words[word] for word in centroid))
 
 
 # In[26]:
@@ -194,7 +194,7 @@ for num, centroid in enumerate(common_words):
 
 # To particulalry observe the "safe food", let's view the first cluster only.
 common_words = model.cluster_centers_.argsort()[0,-1:-26:-1]
-for num, centroid in enumerate(common_words):
+for centroid in common_words:
     print(words[centroid])
 
 

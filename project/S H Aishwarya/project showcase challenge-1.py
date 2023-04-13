@@ -157,9 +157,9 @@ In machine learning, we use gradient descent to update the parameters of our mod
 def gradient_descent(init_m,init_c,x,t,learning_rate,iterations,error_threshold):
     m=init_m
     c=init_c
-    error_values=list()
-    mc_values=list()
-    for i in range(iterations):
+    error_values = []
+    mc_values = []
+    for _ in range(iterations):
         e=error(m,x,c,t)
         if e<error_threshold:
             print('Error less than the threshold. Stopping gradient descent')

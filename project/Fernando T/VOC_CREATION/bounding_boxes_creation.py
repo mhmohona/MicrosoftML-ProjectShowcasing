@@ -149,8 +149,7 @@ class ImageHanlder:
         """
         Norm image to constant shape
         """
-        img = cv2.resize(image, self.normal_shape)
-        return img
+        return cv2.resize(image, self.normal_shape)
 
     def cut_image(self, image, p1, p2, simple=False):
         """
@@ -161,11 +160,10 @@ class ImageHanlder:
 
         w = p2[0]
         h = p2[1]
-        
+
         if simple:
             crop_img = image[y:h, x:w]
-        crop_img = image[y:y+h, x:x+w]
-        return crop_img
+        return image[y:y+h, x:x+w]
 
     def find_contour_base(self, image, kernel):
 
@@ -211,24 +209,19 @@ class ImageHanlder:
                 p2 = (p2[0], p2[1])
 
                 boxes.append([p1,p2])
-                
+
                 #cv2.rectangle(im2, p1, p2, (0, 255, 0), 2)
 
-        
+
         # If all the rectanguler boxes was found.
         #thresh = ((len(boxes) >= 20 ) and (len(boxes) <= 24))
         thresh = len(boxes) == 24
 
-        if thresh :
+        if thresh:
             # print("size",size)
 
             # Iterate over the rectangular boxes
-            for i, b in enumerate(boxes):
-                index_or = i
-
-                out_index = index_or + 1
-
-                outputs.append({out_index: b})
+            outputs.extend({i + 1: b} for i, b in enumerate(boxes))
         else:
             """
             If detection is < 24 log this file
@@ -258,10 +251,10 @@ class ImageHanlder:
 
                 # Obtain only the name without extension 
                 filename_root = filename.split(".")[0]
-                
+
                 # Find the contours box rectangle for each partido 
                 cont_img, self.outputs = self.find_contour(c_image, i_path)
-                
+
                 if len(self.outputs) > 0:
                         
                     _writer = Writer(i_path, self.normal_shape[1], self.normal_shape[0])
@@ -271,31 +264,31 @@ class ImageHanlder:
                         for k, v in o.items():
                             #print(f"WORKING ON {k}")
                             partido_key_id = k  
-                            
+
                             p1, p2 = v
 
-                            if k in self.partidos_todos:
+                            if partido_key_id in self.partidos_todos:
                                 # Mueva Position tira 
                                 n_p1 = (p1[0] + 340, p1[1])
                                 n_p2 = (p2[0] + 180, p2[1])
 
-                            if k in self.otros_todos:
+                            if partido_key_id in self.otros_todos:
 
                                 # Mueva Position tira 
                                 n_p1 = (p1[0] + 310, p1[1])
                                 n_p2 = (p2[0] + 215, p2[1])
 
                             # Names
-                            xmin = p1[0] 
-                            ymin = p1[1] 
-                            xmax = p2[0] 
+                            xmin = p1[0]
+                            ymin = p1[1]
+                            xmax = p2[0]
                             ymax = p2[1]
 
                             # Results
-                            xmin_n = n_p1[0] 
+                            xmin_n = n_p1[0]
                             ymin_n = n_p1[1] 
 
-                            xmax_n = n_p2[0] 
+                            xmax_n = n_p2[0]
                             ymax_n = n_p2[1] 
 
 
@@ -305,8 +298,8 @@ class ImageHanlder:
 
                             # Get Names results lables
                             label_n = self.name_maping_results[int(partido_key_id+24)]
-                            
-                            
+
+
                             # Write coordinates For Names
 
                             _writer.addObject(label, xmin, ymin, 
@@ -321,10 +314,10 @@ class ImageHanlder:
 
                                 p1 =  ( xmin, ymin )
                                 p2 =  ( xmax, ymax )
-                                
+
                                 p1_n = (xmin_n, ymin_n)
                                 p2_n = (xmax_n, ymax_n)
-                                
+
                                 font                   = cv2.FONT_HERSHEY_SIMPLEX
                                 fontScale              = 0.6
                                 fontColor              = (0,0,0)
@@ -350,7 +343,7 @@ class ImageHanlder:
                                 # Draw Results
                                 cv2.rectangle(cont_img,  p1_n , p2_n, (0, 255, 0), thickness=2)
 
-                            
+
                     # Write the acta with the number of results drawed on it.
                     base_path_labels = os.path.join(self.base_path,"Train","annotations")
                     base_path_images =  os.path.join(self.base_path, "Train", "images")
@@ -358,15 +351,15 @@ class ImageHanlder:
                     os.makedirs(base_path_labels, exist_ok=True)
                     os.makedirs(base_path_images, exist_ok=True)
 
-                    path_label= os.path.join(base_path_labels, filename_root+".xml" )
-                    path_image= os.path.join(base_path_images, filename_root+".jpg")
+                    path_label = os.path.join(base_path_labels, f"{filename_root}.xml")
+                    path_image = os.path.join(base_path_images, f"{filename_root}.jpg")
 
-                    
+
                     # Write XML
                     _writer.save(path_label)
 
                     cv2.imwrite(path_image, cont_img)
-                
+
             except Exception as e:
                 filename = i_path.split("/")[-1]
                 _filename_error = "errorInOpenFile"

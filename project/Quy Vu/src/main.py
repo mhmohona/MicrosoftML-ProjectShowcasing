@@ -7,8 +7,9 @@ class HeartFailurePredictor:
         self.expected_len = expected_len
 
     def check_user_input_len(self, user_input):
-        assert len(user_input) == self.expected_len,\
-            'Expect input for {} patient(s). Please re-enter'.format(self.expected_len)
+        assert (
+            len(user_input) == self.expected_len
+        ), f'Expect input for {self.expected_len} patient(s). Please re-enter'
 
     def request_user_input(self, msg):
         user_input = [float(item) for item in input(msg).split(',')]
@@ -67,7 +68,11 @@ if __name__ == '__main__':
     prediction = [round(pred, 2) for pred in get_prediction(input_json)]
 
     if predictor.expected_len > 1:
-        print('The patients\'s probabilities of heart failure respectively are: {}'.format(str(prediction)[1:-1]))
+        print(
+            f"The patients\'s probabilities of heart failure respectively are: {str(prediction)[1:-1]}"
+        )
     else:
-        print('The patient\'s probability of heart failure is: {}'.format(str(prediction)[1:-1]))
+        print(
+            f"The patient\'s probability of heart failure is: {str(prediction)[1:-1]}"
+        )
     input('Press Enter to exit')

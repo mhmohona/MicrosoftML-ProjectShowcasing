@@ -29,7 +29,9 @@ class LandmarkDetectionModel(Model):
                 outputs = self.network.requests[0].outputs[self.output_name]
                 left_eye_image, right_eye_image, eye_cords = self.preprocess_output(outputs, image)
         except Exception as e:
-            self.logger.error("Error While making prediction in Landmark Detection Model" + str(e))
+            self.logger.error(
+                f"Error While making prediction in Landmark Detection Model{str(e)}"
+            )
         return left_eye_image, right_eye_image, eye_cords
 
     def preprocess_output(self, outputs, image):
@@ -63,5 +65,7 @@ class LandmarkDetectionModel(Model):
                          [right_eye_xmin, right_eye_ymin, right_eye_xmax, right_eye_ymax]]
 
         except Exception as e:
-            self.logger.error("Error While drawing bounding boxes on image in Landmark Detection Model" + str(e))
+            self.logger.error(
+                f"Error While drawing bounding boxes on image in Landmark Detection Model{str(e)}"
+            )
         return left_eye_image, right_eye_image, eye_cords

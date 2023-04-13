@@ -137,8 +137,9 @@ def hw_cv(series, seasonal_periods, initial_train_window, test_window):
             fcast = model_roll.forecast(t)
             error_roll = rmse(test_ts, fcast)
             errors_roll.append(error_roll)
-            i=i+1
+            i += 1
         return np.mean(errors_roll).round(1)
+
     def rolling_tscv(series,trend,seasonal,seasonal_periods,damped,boxcox,initial_train_window, test_window):
         i =  0
         x = initial_train_window
@@ -155,8 +156,9 @@ def hw_cv(series, seasonal_periods, initial_train_window, test_window):
             fcast = model_roll.forecast(t)
             error_roll = rmse(test_ts, fcast)
             errors_roll.append(error_roll)
-            i=i+1
+            i += 1
         return np.mean(errors_roll).round(1)
+
     trend      = ['add','mul']
     seasonal   = ['add','mul']
     damped     = [False, True]
@@ -184,7 +186,7 @@ def cbb(array):
         s = np.tile(array, (l+1))
         y = s[i:i+l]
         z.append(y)
-        i = i + 1
+        i += 1
     return z
 
 def baggedets(series, h = 6, seasonal_periods=4, s_window=7, initialization = 'heuristic', damped=True, averaging ='mean'):
@@ -193,43 +195,43 @@ def baggedets(series, h = 6, seasonal_periods=4, s_window=7, initialization = 'h
     from scipy.special import inv_boxcox
     import warnings
     warnings.filterwarnings("ignore")
-    
+
     #Transform to BoxCox
     #bcox, lam = boxcox(series)
     bcox = np.log(series)
-        
+
     #Seasonal Decomposition using STL, seasonal shoul dbe >= 7 and odd 
     stl = (STL(bcox,
                seasonal = s_window,
                period = seasonal_periods).fit())
-    
-    
+
+
     bag = []
 
 
-    for i in range(0,stl.resid.shape[0]):
+    for i in range(stl.resid.shape[0]):
         recon = stl.trend + stl.seasonal + cbb(stl.resid)[i]
         bag.append(recon)
-    
+
     fc_list = []
-    
-    for i in range(0,stl.resid.shape[0]):
-    
+
+    for i in range(stl.resid.shape[0]):
+
         model = (ets(bag[i],
                      trend=True,
                      damped_trend=damped,
                      seasonal=seasonal_periods,
                      initialization_method=initialization ).fit())
-    
+
         fc_list.append(model.forecast(h))
 
-       
+
         if averaging == 'mean':
             forecast = np.exp((np.mean(fc_list, axis=0)))
         else:
             forecast = np.exp((np.median(fc_list, axis=0)))
-       
-    
+
+
     return forecast
 
 
@@ -318,27 +320,26 @@ def combshd(train,horizon,seasonality, init):
                                            seasonal=None,
                                            initialization_method= init, 
                                            damped_trend=False).fit()
-    
+
     fc1 = inv_boxcox(ses.forecast(horizon),lam)
-    
+
     holt=sm.tsa.statespace.ExponentialSmoothing(train_x,
                                            trend=True, 
                                            seasonal=seasonality,
                                            initialization_method= init, 
                                            damped_trend=False).fit()
-    
+
     fc2 = inv_boxcox(holt.forecast(horizon),lam)
-    
+
     damp=sm.tsa.statespace.ExponentialSmoothing(train_x,
                                            trend=True, 
                                            seasonal=seasonality,
                                            initialization_method= init, 
                                            damped_trend=True).fit()
-    
+
     fc3 = inv_boxcox(damp.forecast(horizon),lam)
-    
-    fc = (fc1+fc2+fc3)/3
-    return fc
+
+    return (fc1+fc2+fc3)/3
 
 
 def ts(series, fc_horizon, seasonality, hw_trend, hw_seasonal, hw_damped, hw_bcox, sarima_O1, sarima_O2, exog_series):

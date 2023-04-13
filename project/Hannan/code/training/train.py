@@ -23,6 +23,7 @@ IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
 ARISING IN ANY WAY OUT OF THE USE OF THE SOFTWARE CODE, EVEN IF ADVISED OF THE
 POSSIBILITY OF SUCH DAMAGE.
 """
+
 import pickle
 from azureml.core import Workspace
 from azureml.core.run import Run
@@ -71,8 +72,8 @@ with open(model_name, "wb") as file:
     joblib.dump(value=reg, filename=model_name)
 
 # upload the model file explicitly into artifacts
-run.upload_file(name="./outputs/" + model_name, path_or_stream=model_name)
-print("Uploaded the model {} to experiment {}".format(model_name, run.experiment.name))
+run.upload_file(name=f"./outputs/{model_name}", path_or_stream=model_name)
+print(f"Uploaded the model {model_name} to experiment {run.experiment.name}")
 dirpath = os.getcwd()
 print(dirpath)
 
